@@ -31,10 +31,9 @@ def main(subscription):
 if __name__ == '__main__':
     main("REGISTER QUERY testQuery "
          "OUTPUT ANN_IMAGE "
-         "CONTENT color,shape,ok "
-         "SELECT p:Person,c1:City,c:Car,t:Truck "
-         #"MATCH (p)-[SPATIAL:LEFT]->(c) AND (c)<-[TEMPORAL:RIGHT]-(t25) "
-         "WHERE c.name='New Delhi' OR t.color='Blue' AND p.gender='male' "
+         "CONTENT object_detection "
+         "MATCH (p:Person {label:'PERSON'}) OPTIONAL MATCH (c:Car)<-[TEMPORAL:RIGHT]->(t:Truck) "
+         "WHERE c.color='blue' "
          "FROM pub01 "
          "WITHIN TUMBLING_TIME_WINDOW(30) "
          #"WITH_QoS CONFIDENCE > 70 "

@@ -20,15 +20,10 @@ class CustomEPLListener(GnosisEPLListener):
     def enterObject_type(self, ctx):
         print(ctx.getText())
 
-    def enterRelationship(self, ctx):
+    def enterMatch_clause(self, ctx):
         print(ctx.getText())
 
-    def enterCondition_clause(self, ctx):
-        print(ctx.logical_operator())
-        ctx2 = ctx.condition()[0]
-        print()
-
-    def enterCondition(self, ctx):
+    def enterWhere_clause(self, ctx):
         print(ctx.getText())
 
     def enterPublisher(self, ctx):
@@ -37,7 +32,7 @@ class CustomEPLListener(GnosisEPLListener):
     def enterWindow(self, ctx):
         print(ctx.getText())
 
-    def enterMetric(self, ctx):
+    def enterRelationship(self, ctx):
         print(ctx.getText())
 
     def enterNode(self, ctx):

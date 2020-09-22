@@ -39,6 +39,8 @@ RPAREN	: ')' ;
 LPAREN	: '(' ;
 RBRACK	: ']' ;
 LBRACK	: '[' ;
+RCURLY	: '}' ;
+LCURLY	: '{' ;
 PLUS	: '+' ;
 //HYPHEN	: '-' ;
 //LEFT_ARROW	: '<-' ;
@@ -75,7 +77,8 @@ TUMLBING_TIME_WINDOW    : T U M B L I N G UNDERSCORE T I M E UNDERSCORE W I N D 
 TUMLBING_COUNT_WINDOW    : T U M B L I N G UNDERSCORE C O U N T UNDERSCORE W I N D O W ;
 CONFIDENCE : C O N F I D E N C E ;
 WITH_QoS : W I T H UNDERSCORE Q O S ;
-RETURN : R E T U R N;
+RETURN : R E T U R N ;
+OPTIONAL : O P T I O N A L ;
 
 NUMBER              : DIGIT+ ;
 
@@ -85,7 +88,9 @@ WHITESPACE          : (' ' | '\t') ;
 
 NEWLINE             : ('\r'? '\n' | '\r')+ ;
 
-REL_DIRECTION       : (LTH '-' | '-' | '-' GTH)+ ;
+REL_DIRECTION       : (LTH '-' | '-' | '-' GTH) ;
+
+EVERYTHING          : '?(.*)' ;
 
 /*
  * Parser Rules
@@ -95,24 +100,14 @@ comparison_operator : (EQUAL | GTH | LTH) ;
 
 query : subcription + EOF ;
 
-//subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
-//               OUTPUT WHITESPACE output_type separator
-//               CONTENT WHITESPACE content separator
-//               SELECT WHITESPACE object_list separator
-//               MATCH WHITESPACE match_clause separator
-//               WHERE WHITESPACE condition_clause separator
-//               FROM WHITESPACE publisher separator
-//               WITHIN WHITESPACE window separator
-//               WITH_QoS WHITESPACE metric_list separator
-//               RETURN WHITESPACE node_list;
-
 subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                OUTPUT WHITESPACE output_type separator
                CONTENT WHITESPACE content separator
-               SELECT WHITESPACE object_list separator
-               WHERE WHITESPACE condition_clause separator
+               MATCH WHITESPACE match_clause separator
+               (WHERE WHITESPACE where_clause)?
                FROM WHITESPACE publisher separator
                WITHIN WHITESPACE window separator
+               //WITH_QoS WHITESPACE metric_list separator
                RETURN WHITESPACE node_list;
 
 query_name  : WORD ;
@@ -124,23 +119,26 @@ separator : (NEWLINE | WHITESPACE)+ ;
 content : (content_service | COMMA | WHITESPACE)+ ;
 content_service : (WORD | '-')+ ;
 
-object_list : object_type ((COMMA | (COMMA WHITESPACE)) object_type)* ;
-object_type    : object_ref COLON object_class ;
-object_ref : alphanumeric ;
+match_clause : relationship (WHITESPACE match_type WHITESPACE relationship)* ;
+match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
+relationship : left_object (REL_DIRECTION LBRACK rel_type COLON query_operator RBRACK REL_DIRECTION right_object)?;
+
+left_object : object_ref_with_class ;
+right_object : object_ref_with_class ;
+object_ref_with_class  : LPAREN object_ref COLON object_class (WHITESPACE* attributes)? RPAREN ;
 object_class : WORD ;
+object_ref : alphanumeric ;
 
-match_clause : relationship (WHITESPACE logical_operator WHITESPACE relationship)* ;
-relationship        : object_ref_with_braces REL_DIRECTION LBRACK rel_type COLON query_operator RBRACK REL_DIRECTION object_ref_with_braces;
+attributes : LCURLY WHITESPACE* attribute ((COMMA | (COMMA WHITESPACE*)) attribute)* WHITESPACE* RCURLY ;
+attribute : attribute_name COLON ('\'' | '"') attribute_value ('\'' | '"');
+attribute_name : WORD ;
+attribute_value : (WORD | WHITESPACE)+ ;
 
-object_ref_with_braces         : LPAREN object_ref RPAREN ;
 rel_type            : (SPATIAL | TEMPORAL)+ ;
 query_operator      : (LEFT | RIGHT)+ ;
 logical_operator    : (AND | OR) ;
 
-condition_clause : condition (WHITESPACE logical_operator WHITESPACE condition)* ;
-condition : object_ref DOT attribute_name WHITESPACE* comparison_operator WHITESPACE* ('\'' | '"') attribute_value ('\'' | '"');
-attribute_name : WORD ;
-attribute_value : (WORD | WHITESPACE)+ ;
+where_clause : ( ~FROM* | '\'' | '"') ;
 
 publisher : alphanumeric ;
 

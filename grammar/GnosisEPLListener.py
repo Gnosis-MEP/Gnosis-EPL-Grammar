@@ -3,7 +3,7 @@ from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .GnosisEPLParser import GnosisEPLParser
 else:
-    from grammar.GnosisEPLParser import GnosisEPLParser
+    from GnosisEPLParser import GnosisEPLParser
 
 # This class defines a complete listener for a parse tree produced by GnosisEPLParser.
 class GnosisEPLListener(ParseTreeListener):
@@ -89,48 +89,21 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#object_list.
-    def enterObject_list(self, ctx:GnosisEPLParser.Object_listContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#object_list.
-    def exitObject_list(self, ctx:GnosisEPLParser.Object_listContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#object_type.
-    def enterObject_type(self, ctx:GnosisEPLParser.Object_typeContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#object_type.
-    def exitObject_type(self, ctx:GnosisEPLParser.Object_typeContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#object_ref.
-    def enterObject_ref(self, ctx:GnosisEPLParser.Object_refContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#object_ref.
-    def exitObject_ref(self, ctx:GnosisEPLParser.Object_refContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#object_class.
-    def enterObject_class(self, ctx:GnosisEPLParser.Object_classContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#object_class.
-    def exitObject_class(self, ctx:GnosisEPLParser.Object_classContext):
-        pass
-
-
     # Enter a parse tree produced by GnosisEPLParser#match_clause.
     def enterMatch_clause(self, ctx:GnosisEPLParser.Match_clauseContext):
         pass
 
     # Exit a parse tree produced by GnosisEPLParser#match_clause.
     def exitMatch_clause(self, ctx:GnosisEPLParser.Match_clauseContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#match_type.
+    def enterMatch_type(self, ctx:GnosisEPLParser.Match_typeContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#match_type.
+    def exitMatch_type(self, ctx:GnosisEPLParser.Match_typeContext):
         pass
 
 
@@ -143,12 +116,84 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#object_ref_with_braces.
-    def enterObject_ref_with_braces(self, ctx:GnosisEPLParser.Object_ref_with_bracesContext):
+    # Enter a parse tree produced by GnosisEPLParser#left_object.
+    def enterLeft_object(self, ctx:GnosisEPLParser.Left_objectContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#object_ref_with_braces.
-    def exitObject_ref_with_braces(self, ctx:GnosisEPLParser.Object_ref_with_bracesContext):
+    # Exit a parse tree produced by GnosisEPLParser#left_object.
+    def exitLeft_object(self, ctx:GnosisEPLParser.Left_objectContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#right_object.
+    def enterRight_object(self, ctx:GnosisEPLParser.Right_objectContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#right_object.
+    def exitRight_object(self, ctx:GnosisEPLParser.Right_objectContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#object_ref_with_class.
+    def enterObject_ref_with_class(self, ctx:GnosisEPLParser.Object_ref_with_classContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#object_ref_with_class.
+    def exitObject_ref_with_class(self, ctx:GnosisEPLParser.Object_ref_with_classContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#object_class.
+    def enterObject_class(self, ctx:GnosisEPLParser.Object_classContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#object_class.
+    def exitObject_class(self, ctx:GnosisEPLParser.Object_classContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#object_ref.
+    def enterObject_ref(self, ctx:GnosisEPLParser.Object_refContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#object_ref.
+    def exitObject_ref(self, ctx:GnosisEPLParser.Object_refContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#attributes.
+    def enterAttributes(self, ctx:GnosisEPLParser.AttributesContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#attributes.
+    def exitAttributes(self, ctx:GnosisEPLParser.AttributesContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#attribute.
+    def enterAttribute(self, ctx:GnosisEPLParser.AttributeContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#attribute.
+    def exitAttribute(self, ctx:GnosisEPLParser.AttributeContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#attribute_name.
+    def enterAttribute_name(self, ctx:GnosisEPLParser.Attribute_nameContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#attribute_name.
+    def exitAttribute_name(self, ctx:GnosisEPLParser.Attribute_nameContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#attribute_value.
+    def enterAttribute_value(self, ctx:GnosisEPLParser.Attribute_valueContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#attribute_value.
+    def exitAttribute_value(self, ctx:GnosisEPLParser.Attribute_valueContext):
         pass
 
 
@@ -179,39 +224,12 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#condition_clause.
-    def enterCondition_clause(self, ctx:GnosisEPLParser.Condition_clauseContext):
+    # Enter a parse tree produced by GnosisEPLParser#where_clause.
+    def enterWhere_clause(self, ctx:GnosisEPLParser.Where_clauseContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#condition_clause.
-    def exitCondition_clause(self, ctx:GnosisEPLParser.Condition_clauseContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#condition.
-    def enterCondition(self, ctx:GnosisEPLParser.ConditionContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#condition.
-    def exitCondition(self, ctx:GnosisEPLParser.ConditionContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#attribute_name.
-    def enterAttribute_name(self, ctx:GnosisEPLParser.Attribute_nameContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#attribute_name.
-    def exitAttribute_name(self, ctx:GnosisEPLParser.Attribute_nameContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#attribute_value.
-    def enterAttribute_value(self, ctx:GnosisEPLParser.Attribute_valueContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#attribute_value.
-    def exitAttribute_value(self, ctx:GnosisEPLParser.Attribute_valueContext):
+    # Exit a parse tree produced by GnosisEPLParser#where_clause.
+    def exitWhere_clause(self, ctx:GnosisEPLParser.Where_clauseContext):
         pass
 
 
