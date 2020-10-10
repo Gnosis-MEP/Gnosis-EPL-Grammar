@@ -62,6 +62,15 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#output.
+    def enterOutput(self, ctx:GnosisEPLParser.OutputContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#output.
+    def exitOutput(self, ctx:GnosisEPLParser.OutputContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#separator.
     def enterSeparator(self, ctx:GnosisEPLParser.SeparatorContext):
         pass
@@ -122,6 +131,24 @@ class GnosisEPLListener(ParseTreeListener):
 
     # Exit a parse tree produced by GnosisEPLParser#left_object.
     def exitLeft_object(self, ctx:GnosisEPLParser.Left_objectContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#left_rel_direction.
+    def enterLeft_rel_direction(self, ctx:GnosisEPLParser.Left_rel_directionContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#left_rel_direction.
+    def exitLeft_rel_direction(self, ctx:GnosisEPLParser.Left_rel_directionContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#right_rel_direction.
+    def enterRight_rel_direction(self, ctx:GnosisEPLParser.Right_rel_directionContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#right_rel_direction.
+    def exitRight_rel_direction(self, ctx:GnosisEPLParser.Right_rel_directionContext):
         pass
 
 
@@ -197,12 +224,12 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#rel_type.
-    def enterRel_type(self, ctx:GnosisEPLParser.Rel_typeContext):
+    # Enter a parse tree produced by GnosisEPLParser#operator_type.
+    def enterOperator_type(self, ctx:GnosisEPLParser.Operator_typeContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#rel_type.
-    def exitRel_type(self, ctx:GnosisEPLParser.Rel_typeContext):
+    # Exit a parse tree produced by GnosisEPLParser#operator_type.
+    def exitOperator_type(self, ctx:GnosisEPLParser.Operator_typeContext):
         pass
 
 

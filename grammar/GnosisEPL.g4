@@ -68,6 +68,8 @@ SPATIAL : S P A T I A L ;
 TEMPORAL : T E M P O R A L ;
 LEFT : L E F T ;
 RIGHT : R I G H T ;
+BACK : B A C K ;
+FRONT : F R O N T ;
 AND : A N D ;
 OR : O R ;
 FROM                : F R O M;
@@ -75,6 +77,8 @@ WHERE               : W H E R E;
 WITHIN : W I T H I N ;
 TUMLBING_TIME_WINDOW    : T U M B L I N G UNDERSCORE T I M E UNDERSCORE W I N D O W ;
 TUMLBING_COUNT_WINDOW    : T U M B L I N G UNDERSCORE C O U N T UNDERSCORE W I N D O W ;
+SLIDING_TIME_WINDOW    : S L I D I N G UNDERSCORE T I M E UNDERSCORE W I N D O W ;
+SLIDING_COUNT_WINDOW    : S L I D I N G UNDERSCORE C O U N T UNDERSCORE W I N D O W ;
 CONFIDENCE : C O N F I D E N C E ;
 WITH_QoS : W I T H UNDERSCORE Q O S ;
 RETURN : R E T U R N ;
@@ -96,6 +100,7 @@ EVERYTHING          : '?(.*)' ;
  * Parser Rules
  */
 alphanumeric : ( WORD | NUMBER )+ ;
+
 comparison_operator : (EQUAL | GTH | LTH) ;
 
 query : subcription + EOF ;
@@ -112,7 +117,8 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
 
 query_name  : WORD ;
 
-output_type  : WORD ;
+output_type  : output ((COMMA | (COMMA WHITESPACE+)) output)* ;
+output : WORD ;
 
 separator : (NEWLINE | WHITESPACE)+ ;
 
@@ -121,9 +127,11 @@ content_service : (WORD | '-')+ ;
 
 match_clause : relationship (WHITESPACE match_type WHITESPACE relationship)* ;
 match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
-relationship : left_object (REL_DIRECTION LBRACK rel_type COLON query_operator RBRACK REL_DIRECTION right_object)?;
+relationship : left_object (left_rel_direction LBRACK operator_type COLON query_operator RBRACK right_rel_direction right_object)?;
 
 left_object : object_ref_with_class ;
+left_rel_direction: REL_DIRECTION ;
+right_rel_direction: REL_DIRECTION ;
 right_object : object_ref_with_class ;
 object_ref_with_class  : LPAREN object_ref COLON object_class (WHITESPACE* attributes)? RPAREN ;
 object_class : WORD ;
@@ -134,16 +142,16 @@ attribute : attribute_name COLON ('\'' | '"') attribute_value ('\'' | '"');
 attribute_name : WORD ;
 attribute_value : (WORD | WHITESPACE)+ ;
 
-rel_type            : (SPATIAL | TEMPORAL)+ ;
-query_operator      : (LEFT | RIGHT)+ ;
+operator_type       : SPATIAL ;
+query_operator      : (LEFT | RIGHT | BACK | FRONT) ;
 logical_operator    : (AND | OR) ;
 
 where_clause : ( ~FROM* | '\'' | '"') ;
 
-publisher : alphanumeric ;
+publisher : (alphanumeric | '.mp4')+ ;
 
 window : window_type LPAREN window_size RPAREN ;
-window_type : (TUMLBING_TIME_WINDOW | TUMLBING_COUNT_WINDOW)+ ;
+window_type : (TUMLBING_TIME_WINDOW | TUMLBING_COUNT_WINDOW | SLIDING_TIME_WINDOW | SLIDING_COUNT_WINDOW) ;
 window_size : window_length ((COMMA | (COMMA WHITESPACE)) sliding_length)?;
 window_length : NUMBER ;
 sliding_length : NUMBER ;
@@ -154,7 +162,7 @@ metric_name : CONFIDENCE ;
 metric_value : NUMBER ;
 
 node_list : node ((COMMA | (COMMA WHITESPACE)) node)* ;
-node : WORD ;
+node : (alphanumeric | ASTERISK)+;
 
 
 

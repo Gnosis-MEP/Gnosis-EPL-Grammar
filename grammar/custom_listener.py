@@ -11,7 +11,7 @@ class CustomEPLListener(GnosisEPLListener):
     def enterQuery_name(self, ctx):
         print(ctx.getText())
 
-    def enterOutput_type(self, ctx):
+    def enterOutput(self, ctx):
         print(ctx.getText())
 
     def enterContent_service(self, ctx):

@@ -11,148 +11,160 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\64")
-        buf.write("\u0148\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\39")
+        buf.write("\u0161\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
         buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
         buf.write("\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t")
-        buf.write("&\3\2\6\2N\n\2\r\2\16\2O\3\3\3\3\3\4\6\4U\n\4\r\4\16\4")
-        buf.write("V\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5p\n\5\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3")
-        buf.write("\7\3\7\3\b\6\b\u0083\n\b\r\b\16\b\u0084\3\t\3\t\3\t\6")
-        buf.write("\t\u008a\n\t\r\t\16\t\u008b\3\n\6\n\u008f\n\n\r\n\16\n")
-        buf.write("\u0090\3\13\3\13\3\13\3\13\3\13\3\13\7\13\u0099\n\13\f")
-        buf.write("\13\16\13\u009c\13\13\3\f\3\f\3\f\3\f\3\f\5\f\u00a3\n")
-        buf.write("\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00af\n")
-        buf.write("\r\3\16\3\16\3\17\3\17\3\20\3\20\3\20\3\20\3\20\7\20\u00ba")
-        buf.write("\n\20\f\20\16\20\u00bd\13\20\3\20\5\20\u00c0\n\20\3\20")
-        buf.write("\3\20\3\21\3\21\3\22\3\22\3\23\3\23\7\23\u00ca\n\23\f")
-        buf.write("\23\16\23\u00cd\13\23\3\23\3\23\3\23\3\23\7\23\u00d3\n")
-        buf.write("\23\f\23\16\23\u00d6\13\23\5\23\u00d8\n\23\3\23\7\23\u00db")
-        buf.write("\n\23\f\23\16\23\u00de\13\23\3\23\7\23\u00e1\n\23\f\23")
-        buf.write("\16\23\u00e4\13\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24")
-        buf.write("\3\24\3\25\3\25\3\26\6\26\u00f1\n\26\r\26\16\26\u00f2")
-        buf.write("\3\27\6\27\u00f6\n\27\r\27\16\27\u00f7\3\30\6\30\u00fb")
-        buf.write("\n\30\r\30\16\30\u00fc\3\31\3\31\3\32\7\32\u0102\n\32")
-        buf.write("\f\32\16\32\u0105\13\32\3\32\3\32\5\32\u0109\n\32\3\33")
-        buf.write("\3\33\3\34\3\34\3\34\3\34\3\34\3\35\6\35\u0113\n\35\r")
-        buf.write("\35\16\35\u0114\3\36\3\36\3\36\3\36\5\36\u011b\n\36\3")
-        buf.write("\36\5\36\u011e\n\36\3\37\3\37\3 \3 \3!\3!\3!\3!\5!\u0128")
-        buf.write("\n!\3!\7!\u012b\n!\f!\16!\u012e\13!\3\"\3\"\3\"\3\"\3")
-        buf.write("\"\3\"\3#\3#\3$\3$\3%\3%\3%\3%\5%\u013e\n%\3%\7%\u0141")
-        buf.write("\n%\f%\16%\u0144\13%\3&\3&\3&\2\2\'\2\4\6\b\n\f\16\20")
-        buf.write("\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJ\2")
-        buf.write("\r\3\2/\60\4\2\26\27\31\31\3\2\61\62\4\2\3\3\60\60\3\2")
-        buf.write("\4\5\3\2\60\61\3\2 !\3\2\"#\3\2$%\3\2&&\3\2)*\2\u0142")
-        buf.write("\2M\3\2\2\2\4Q\3\2\2\2\6T\3\2\2\2\bZ\3\2\2\2\n}\3\2\2")
-        buf.write("\2\f\177\3\2\2\2\16\u0082\3\2\2\2\20\u0089\3\2\2\2\22")
-        buf.write("\u008e\3\2\2\2\24\u0092\3\2\2\2\26\u00a2\3\2\2\2\30\u00a4")
-        buf.write("\3\2\2\2\32\u00b0\3\2\2\2\34\u00b2\3\2\2\2\36\u00b4\3")
-        buf.write("\2\2\2 \u00c3\3\2\2\2\"\u00c5\3\2\2\2$\u00c7\3\2\2\2&")
-        buf.write("\u00e7\3\2\2\2(\u00ed\3\2\2\2*\u00f0\3\2\2\2,\u00f5\3")
-        buf.write("\2\2\2.\u00fa\3\2\2\2\60\u00fe\3\2\2\2\62\u0108\3\2\2")
-        buf.write("\2\64\u010a\3\2\2\2\66\u010c\3\2\2\28\u0112\3\2\2\2:\u0116")
-        buf.write("\3\2\2\2<\u011f\3\2\2\2>\u0121\3\2\2\2@\u0123\3\2\2\2")
-        buf.write("B\u012f\3\2\2\2D\u0135\3\2\2\2F\u0137\3\2\2\2H\u0139\3")
-        buf.write("\2\2\2J\u0145\3\2\2\2LN\t\2\2\2ML\3\2\2\2NO\3\2\2\2OM")
-        buf.write("\3\2\2\2OP\3\2\2\2P\3\3\2\2\2QR\t\3\2\2R\5\3\2\2\2SU\5")
-        buf.write("\b\5\2TS\3\2\2\2UV\3\2\2\2VT\3\2\2\2VW\3\2\2\2WX\3\2\2")
-        buf.write("\2XY\7\2\2\3Y\7\3\2\2\2Z[\7\32\2\2[\\\7\61\2\2\\]\7\33")
-        buf.write("\2\2]^\7\61\2\2^_\5\n\6\2_`\5\16\b\2`a\7\34\2\2ab\7\61")
-        buf.write("\2\2bc\5\f\7\2cd\5\16\b\2de\7\35\2\2ef\7\61\2\2fg\5\20")
-        buf.write("\t\2gh\5\16\b\2hi\7\37\2\2ij\7\61\2\2jk\5\24\13\2ko\5")
-        buf.write("\16\b\2lm\7\'\2\2mn\7\61\2\2np\5\62\32\2ol\3\2\2\2op\3")
-        buf.write("\2\2\2pq\3\2\2\2qr\7&\2\2rs\7\61\2\2st\5\64\33\2tu\5\16")
-        buf.write("\b\2uv\7(\2\2vw\7\61\2\2wx\5\66\34\2xy\5\16\b\2yz\7-\2")
-        buf.write("\2z{\7\61\2\2{|\5H%\2|\t\3\2\2\2}~\7\60\2\2~\13\3\2\2")
-        buf.write("\2\177\u0080\7\60\2\2\u0080\r\3\2\2\2\u0081\u0083\t\4")
-        buf.write("\2\2\u0082\u0081\3\2\2\2\u0083\u0084\3\2\2\2\u0084\u0082")
-        buf.write("\3\2\2\2\u0084\u0085\3\2\2\2\u0085\17\3\2\2\2\u0086\u008a")
-        buf.write("\5\22\n\2\u0087\u008a\7\t\2\2\u0088\u008a\7\61\2\2\u0089")
-        buf.write("\u0086\3\2\2\2\u0089\u0087\3\2\2\2\u0089\u0088\3\2\2\2")
-        buf.write("\u008a\u008b\3\2\2\2\u008b\u0089\3\2\2\2\u008b\u008c\3")
-        buf.write("\2\2\2\u008c\21\3\2\2\2\u008d\u008f\t\5\2\2\u008e\u008d")
-        buf.write("\3\2\2\2\u008f\u0090\3\2\2\2\u0090\u008e\3\2\2\2\u0090")
-        buf.write("\u0091\3\2\2\2\u0091\23\3\2\2\2\u0092\u009a\5\30\r\2\u0093")
-        buf.write("\u0094\7\61\2\2\u0094\u0095\5\26\f\2\u0095\u0096\7\61")
-        buf.write("\2\2\u0096\u0097\5\30\r\2\u0097\u0099\3\2\2\2\u0098\u0093")
-        buf.write("\3\2\2\2\u0099\u009c\3\2\2\2\u009a\u0098\3\2\2\2\u009a")
-        buf.write("\u009b\3\2\2\2\u009b\25\3\2\2\2\u009c\u009a\3\2\2\2\u009d")
-        buf.write("\u00a3\7\37\2\2\u009e\u009f\7.\2\2\u009f\u00a0\7\61\2")
-        buf.write("\2\u00a0\u00a3\7\37\2\2\u00a1\u00a3\5\60\31\2\u00a2\u009d")
-        buf.write("\3\2\2\2\u00a2\u009e\3\2\2\2\u00a2\u00a1\3\2\2\2\u00a3")
-        buf.write("\27\3\2\2\2\u00a4\u00ae\5\32\16\2\u00a5\u00a6\7\63\2\2")
-        buf.write("\u00a6\u00a7\7\16\2\2\u00a7\u00a8\5,\27\2\u00a8\u00a9")
-        buf.write("\7\7\2\2\u00a9\u00aa\5.\30\2\u00aa\u00ab\7\r\2\2\u00ab")
-        buf.write("\u00ac\7\63\2\2\u00ac\u00ad\5\34\17\2\u00ad\u00af\3\2")
-        buf.write("\2\2\u00ae\u00a5\3\2\2\2\u00ae\u00af\3\2\2\2\u00af\31")
-        buf.write("\3\2\2\2\u00b0\u00b1\5\36\20\2\u00b1\33\3\2\2\2\u00b2")
-        buf.write("\u00b3\5\36\20\2\u00b3\35\3\2\2\2\u00b4\u00b5\7\f\2\2")
-        buf.write("\u00b5\u00b6\5\"\22\2\u00b6\u00b7\7\7\2\2\u00b7\u00bf")
-        buf.write("\5 \21\2\u00b8\u00ba\7\61\2\2\u00b9\u00b8\3\2\2\2\u00ba")
-        buf.write("\u00bd\3\2\2\2\u00bb\u00b9\3\2\2\2\u00bb\u00bc\3\2\2\2")
-        buf.write("\u00bc\u00be\3\2\2\2\u00bd\u00bb\3\2\2\2\u00be\u00c0\5")
-        buf.write("$\23\2\u00bf\u00bb\3\2\2\2\u00bf\u00c0\3\2\2\2\u00c0\u00c1")
-        buf.write("\3\2\2\2\u00c1\u00c2\7\13\2\2\u00c2\37\3\2\2\2\u00c3\u00c4")
-        buf.write("\7\60\2\2\u00c4!\3\2\2\2\u00c5\u00c6\5\2\2\2\u00c6#\3")
-        buf.write("\2\2\2\u00c7\u00cb\7\20\2\2\u00c8\u00ca\7\61\2\2\u00c9")
-        buf.write("\u00c8\3\2\2\2\u00ca\u00cd\3\2\2\2\u00cb\u00c9\3\2\2\2")
-        buf.write("\u00cb\u00cc\3\2\2\2\u00cc\u00ce\3\2\2\2\u00cd\u00cb\3")
-        buf.write("\2\2\2\u00ce\u00dc\5&\24\2\u00cf\u00d8\7\t\2\2\u00d0\u00d4")
-        buf.write("\7\t\2\2\u00d1\u00d3\7\61\2\2\u00d2\u00d1\3\2\2\2\u00d3")
-        buf.write("\u00d6\3\2\2\2\u00d4\u00d2\3\2\2\2\u00d4\u00d5\3\2\2\2")
-        buf.write("\u00d5\u00d8\3\2\2\2\u00d6\u00d4\3\2\2\2\u00d7\u00cf\3")
-        buf.write("\2\2\2\u00d7\u00d0\3\2\2\2\u00d8\u00d9\3\2\2\2\u00d9\u00db")
-        buf.write("\5&\24\2\u00da\u00d7\3\2\2\2\u00db\u00de\3\2\2\2\u00dc")
-        buf.write("\u00da\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00e2\3\2\2\2")
-        buf.write("\u00de\u00dc\3\2\2\2\u00df\u00e1\7\61\2\2\u00e0\u00df")
-        buf.write("\3\2\2\2\u00e1\u00e4\3\2\2\2\u00e2\u00e0\3\2\2\2\u00e2")
-        buf.write("\u00e3\3\2\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00e2\3\2\2\2")
-        buf.write("\u00e5\u00e6\7\17\2\2\u00e6%\3\2\2\2\u00e7\u00e8\5(\25")
-        buf.write("\2\u00e8\u00e9\7\7\2\2\u00e9\u00ea\t\6\2\2\u00ea\u00eb")
-        buf.write("\5*\26\2\u00eb\u00ec\t\6\2\2\u00ec\'\3\2\2\2\u00ed\u00ee")
-        buf.write("\7\60\2\2\u00ee)\3\2\2\2\u00ef\u00f1\t\7\2\2\u00f0\u00ef")
-        buf.write("\3\2\2\2\u00f1\u00f2\3\2\2\2\u00f2\u00f0\3\2\2\2\u00f2")
-        buf.write("\u00f3\3\2\2\2\u00f3+\3\2\2\2\u00f4\u00f6\t\b\2\2\u00f5")
-        buf.write("\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2\u00f7\u00f5\3\2\2\2")
-        buf.write("\u00f7\u00f8\3\2\2\2\u00f8-\3\2\2\2\u00f9\u00fb\t\t\2")
-        buf.write("\2\u00fa\u00f9\3\2\2\2\u00fb\u00fc\3\2\2\2\u00fc\u00fa")
-        buf.write("\3\2\2\2\u00fc\u00fd\3\2\2\2\u00fd/\3\2\2\2\u00fe\u00ff")
-        buf.write("\t\n\2\2\u00ff\61\3\2\2\2\u0100\u0102\n\13\2\2\u0101\u0100")
-        buf.write("\3\2\2\2\u0102\u0105\3\2\2\2\u0103\u0101\3\2\2\2\u0103")
-        buf.write("\u0104\3\2\2\2\u0104\u0109\3\2\2\2\u0105\u0103\3\2\2\2")
-        buf.write("\u0106\u0109\7\4\2\2\u0107\u0109\7\5\2\2\u0108\u0103\3")
-        buf.write("\2\2\2\u0108\u0106\3\2\2\2\u0108\u0107\3\2\2\2\u0109\63")
-        buf.write("\3\2\2\2\u010a\u010b\5\2\2\2\u010b\65\3\2\2\2\u010c\u010d")
-        buf.write("\58\35\2\u010d\u010e\7\f\2\2\u010e\u010f\5:\36\2\u010f")
-        buf.write("\u0110\7\13\2\2\u0110\67\3\2\2\2\u0111\u0113\t\f\2\2\u0112")
-        buf.write("\u0111\3\2\2\2\u0113\u0114\3\2\2\2\u0114\u0112\3\2\2\2")
-        buf.write("\u0114\u0115\3\2\2\2\u01159\3\2\2\2\u0116\u011d\5<\37")
-        buf.write("\2\u0117\u011b\7\t\2\2\u0118\u0119\7\t\2\2\u0119\u011b")
-        buf.write("\7\61\2\2\u011a\u0117\3\2\2\2\u011a\u0118\3\2\2\2\u011b")
-        buf.write("\u011c\3\2\2\2\u011c\u011e\5> \2\u011d\u011a\3\2\2\2\u011d")
-        buf.write("\u011e\3\2\2\2\u011e;\3\2\2\2\u011f\u0120\7/\2\2\u0120")
-        buf.write("=\3\2\2\2\u0121\u0122\7/\2\2\u0122?\3\2\2\2\u0123\u012c")
-        buf.write("\5B\"\2\u0124\u0128\7\t\2\2\u0125\u0126\7\t\2\2\u0126")
-        buf.write("\u0128\7\61\2\2\u0127\u0124\3\2\2\2\u0127\u0125\3\2\2")
-        buf.write("\2\u0128\u0129\3\2\2\2\u0129\u012b\5B\"\2\u012a\u0127")
-        buf.write("\3\2\2\2\u012b\u012e\3\2\2\2\u012c\u012a\3\2\2\2\u012c")
-        buf.write("\u012d\3\2\2\2\u012dA\3\2\2\2\u012e\u012c\3\2\2\2\u012f")
-        buf.write("\u0130\5D#\2\u0130\u0131\7\61\2\2\u0131\u0132\5\4\3\2")
-        buf.write("\u0132\u0133\7\61\2\2\u0133\u0134\5F$\2\u0134C\3\2\2\2")
-        buf.write("\u0135\u0136\7+\2\2\u0136E\3\2\2\2\u0137\u0138\7/\2\2")
-        buf.write("\u0138G\3\2\2\2\u0139\u0142\5J&\2\u013a\u013e\7\t\2\2")
-        buf.write("\u013b\u013c\7\t\2\2\u013c\u013e\7\61\2\2\u013d\u013a")
-        buf.write("\3\2\2\2\u013d\u013b\3\2\2\2\u013e\u013f\3\2\2\2\u013f")
-        buf.write("\u0141\5J&\2\u0140\u013d\3\2\2\2\u0141\u0144\3\2\2\2\u0142")
-        buf.write("\u0140\3\2\2\2\u0142\u0143\3\2\2\2\u0143I\3\2\2\2\u0144")
-        buf.write("\u0142\3\2\2\2\u0145\u0146\7\60\2\2\u0146K\3\2\2\2\37")
-        buf.write("OVo\u0084\u0089\u008b\u0090\u009a\u00a2\u00ae\u00bb\u00bf")
-        buf.write("\u00cb\u00d4\u00d7\u00dc\u00e2\u00f2\u00f7\u00fc\u0103")
-        buf.write("\u0108\u0114\u011a\u011d\u0127\u012c\u013d\u0142")
+        buf.write("&\4\'\t\'\4(\t(\4)\t)\3\2\6\2T\n\2\r\2\16\2U\3\3\3\3\3")
+        buf.write("\4\6\4[\n\4\r\4\16\4\\\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5")
+        buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3")
+        buf.write("\5\3\5\5\5v\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3")
+        buf.write("\5\3\5\3\5\3\6\3\6\3\7\3\7\3\7\3\7\6\7\u008a\n\7\r\7\16")
+        buf.write("\7\u008b\5\7\u008e\n\7\3\7\7\7\u0091\n\7\f\7\16\7\u0094")
+        buf.write("\13\7\3\b\3\b\3\t\6\t\u0099\n\t\r\t\16\t\u009a\3\n\3\n")
+        buf.write("\3\n\6\n\u00a0\n\n\r\n\16\n\u00a1\3\13\6\13\u00a5\n\13")
+        buf.write("\r\13\16\13\u00a6\3\f\3\f\3\f\3\f\3\f\3\f\7\f\u00af\n")
+        buf.write("\f\f\f\16\f\u00b2\13\f\3\r\3\r\3\r\3\r\3\r\5\r\u00b9\n")
+        buf.write("\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5")
+        buf.write("\16\u00c5\n\16\3\17\3\17\3\20\3\20\3\21\3\21\3\22\3\22")
+        buf.write("\3\23\3\23\3\23\3\23\3\23\7\23\u00d4\n\23\f\23\16\23\u00d7")
+        buf.write("\13\23\3\23\5\23\u00da\n\23\3\23\3\23\3\24\3\24\3\25\3")
+        buf.write("\25\3\26\3\26\7\26\u00e4\n\26\f\26\16\26\u00e7\13\26\3")
+        buf.write("\26\3\26\3\26\3\26\7\26\u00ed\n\26\f\26\16\26\u00f0\13")
+        buf.write("\26\5\26\u00f2\n\26\3\26\7\26\u00f5\n\26\f\26\16\26\u00f8")
+        buf.write("\13\26\3\26\7\26\u00fb\n\26\f\26\16\26\u00fe\13\26\3\26")
+        buf.write("\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\31\6\31")
+        buf.write("\u010b\n\31\r\31\16\31\u010c\3\32\3\32\3\33\3\33\3\34")
+        buf.write("\3\34\3\35\7\35\u0116\n\35\f\35\16\35\u0119\13\35\3\35")
+        buf.write("\3\35\5\35\u011d\n\35\3\36\3\36\6\36\u0121\n\36\r\36\16")
+        buf.write("\36\u0122\3\37\3\37\3\37\3\37\3\37\3 \3 \3!\3!\3!\3!\5")
+        buf.write("!\u0130\n!\3!\5!\u0133\n!\3\"\3\"\3#\3#\3$\3$\3$\3$\5")
+        buf.write("$\u013d\n$\3$\7$\u0140\n$\f$\16$\u0143\13$\3%\3%\3%\3")
+        buf.write("%\3%\3%\3&\3&\3\'\3\'\3(\3(\3(\3(\5(\u0153\n(\3(\7(\u0156")
+        buf.write("\n(\f(\16(\u0159\13(\3)\3)\6)\u015d\n)\r)\16)\u015e\3")
+        buf.write(")\2\2*\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,")
+        buf.write(".\60\62\64\668:<>@BDFHJLNP\2\f\3\2\64\65\4\2\27\30\32")
+        buf.write("\32\3\2\66\67\4\2\3\3\65\65\3\2\4\5\3\2\65\66\3\2#&\3")
+        buf.write("\2\'(\3\2))\3\2,/\2\u015c\2S\3\2\2\2\4W\3\2\2\2\6Z\3\2")
+        buf.write("\2\2\b`\3\2\2\2\n\u0083\3\2\2\2\f\u0085\3\2\2\2\16\u0095")
+        buf.write("\3\2\2\2\20\u0098\3\2\2\2\22\u009f\3\2\2\2\24\u00a4\3")
+        buf.write("\2\2\2\26\u00a8\3\2\2\2\30\u00b8\3\2\2\2\32\u00ba\3\2")
+        buf.write("\2\2\34\u00c6\3\2\2\2\36\u00c8\3\2\2\2 \u00ca\3\2\2\2")
+        buf.write("\"\u00cc\3\2\2\2$\u00ce\3\2\2\2&\u00dd\3\2\2\2(\u00df")
+        buf.write("\3\2\2\2*\u00e1\3\2\2\2,\u0101\3\2\2\2.\u0107\3\2\2\2")
+        buf.write("\60\u010a\3\2\2\2\62\u010e\3\2\2\2\64\u0110\3\2\2\2\66")
+        buf.write("\u0112\3\2\2\28\u011c\3\2\2\2:\u0120\3\2\2\2<\u0124\3")
+        buf.write("\2\2\2>\u0129\3\2\2\2@\u012b\3\2\2\2B\u0134\3\2\2\2D\u0136")
+        buf.write("\3\2\2\2F\u0138\3\2\2\2H\u0144\3\2\2\2J\u014a\3\2\2\2")
+        buf.write("L\u014c\3\2\2\2N\u014e\3\2\2\2P\u015c\3\2\2\2RT\t\2\2")
+        buf.write("\2SR\3\2\2\2TU\3\2\2\2US\3\2\2\2UV\3\2\2\2V\3\3\2\2\2")
+        buf.write("WX\t\3\2\2X\5\3\2\2\2Y[\5\b\5\2ZY\3\2\2\2[\\\3\2\2\2\\")
+        buf.write("Z\3\2\2\2\\]\3\2\2\2]^\3\2\2\2^_\7\2\2\3_\7\3\2\2\2`a")
+        buf.write("\7\33\2\2ab\7\66\2\2bc\7\34\2\2cd\7\66\2\2de\5\n\6\2e")
+        buf.write("f\5\20\t\2fg\7\35\2\2gh\7\66\2\2hi\5\f\7\2ij\5\20\t\2")
+        buf.write("jk\7\36\2\2kl\7\66\2\2lm\5\22\n\2mn\5\20\t\2no\7 \2\2")
+        buf.write("op\7\66\2\2pq\5\26\f\2qu\5\20\t\2rs\7*\2\2st\7\66\2\2")
+        buf.write("tv\58\35\2ur\3\2\2\2uv\3\2\2\2vw\3\2\2\2wx\7)\2\2xy\7")
+        buf.write("\66\2\2yz\5:\36\2z{\5\20\t\2{|\7+\2\2|}\7\66\2\2}~\5<")
+        buf.write("\37\2~\177\5\20\t\2\177\u0080\7\62\2\2\u0080\u0081\7\66")
+        buf.write("\2\2\u0081\u0082\5N(\2\u0082\t\3\2\2\2\u0083\u0084\7\65")
+        buf.write("\2\2\u0084\13\3\2\2\2\u0085\u0092\5\16\b\2\u0086\u008e")
+        buf.write("\7\n\2\2\u0087\u0089\7\n\2\2\u0088\u008a\7\66\2\2\u0089")
+        buf.write("\u0088\3\2\2\2\u008a\u008b\3\2\2\2\u008b\u0089\3\2\2\2")
+        buf.write("\u008b\u008c\3\2\2\2\u008c\u008e\3\2\2\2\u008d\u0086\3")
+        buf.write("\2\2\2\u008d\u0087\3\2\2\2\u008e\u008f\3\2\2\2\u008f\u0091")
+        buf.write("\5\16\b\2\u0090\u008d\3\2\2\2\u0091\u0094\3\2\2\2\u0092")
+        buf.write("\u0090\3\2\2\2\u0092\u0093\3\2\2\2\u0093\r\3\2\2\2\u0094")
+        buf.write("\u0092\3\2\2\2\u0095\u0096\7\65\2\2\u0096\17\3\2\2\2\u0097")
+        buf.write("\u0099\t\4\2\2\u0098\u0097\3\2\2\2\u0099\u009a\3\2\2\2")
+        buf.write("\u009a\u0098\3\2\2\2\u009a\u009b\3\2\2\2\u009b\21\3\2")
+        buf.write("\2\2\u009c\u00a0\5\24\13\2\u009d\u00a0\7\n\2\2\u009e\u00a0")
+        buf.write("\7\66\2\2\u009f\u009c\3\2\2\2\u009f\u009d\3\2\2\2\u009f")
+        buf.write("\u009e\3\2\2\2\u00a0\u00a1\3\2\2\2\u00a1\u009f\3\2\2\2")
+        buf.write("\u00a1\u00a2\3\2\2\2\u00a2\23\3\2\2\2\u00a3\u00a5\t\5")
+        buf.write("\2\2\u00a4\u00a3\3\2\2\2\u00a5\u00a6\3\2\2\2\u00a6\u00a4")
+        buf.write("\3\2\2\2\u00a6\u00a7\3\2\2\2\u00a7\25\3\2\2\2\u00a8\u00b0")
+        buf.write("\5\32\16\2\u00a9\u00aa\7\66\2\2\u00aa\u00ab\5\30\r\2\u00ab")
+        buf.write("\u00ac\7\66\2\2\u00ac\u00ad\5\32\16\2\u00ad\u00af\3\2")
+        buf.write("\2\2\u00ae\u00a9\3\2\2\2\u00af\u00b2\3\2\2\2\u00b0\u00ae")
+        buf.write("\3\2\2\2\u00b0\u00b1\3\2\2\2\u00b1\27\3\2\2\2\u00b2\u00b0")
+        buf.write("\3\2\2\2\u00b3\u00b9\7 \2\2\u00b4\u00b5\7\63\2\2\u00b5")
+        buf.write("\u00b6\7\66\2\2\u00b6\u00b9\7 \2\2\u00b7\u00b9\5\66\34")
+        buf.write("\2\u00b8\u00b3\3\2\2\2\u00b8\u00b4\3\2\2\2\u00b8\u00b7")
+        buf.write("\3\2\2\2\u00b9\31\3\2\2\2\u00ba\u00c4\5\34\17\2\u00bb")
+        buf.write("\u00bc\5\36\20\2\u00bc\u00bd\7\17\2\2\u00bd\u00be\5\62")
+        buf.write("\32\2\u00be\u00bf\7\b\2\2\u00bf\u00c0\5\64\33\2\u00c0")
+        buf.write("\u00c1\7\16\2\2\u00c1\u00c2\5 \21\2\u00c2\u00c3\5\"\22")
+        buf.write("\2\u00c3\u00c5\3\2\2\2\u00c4\u00bb\3\2\2\2\u00c4\u00c5")
+        buf.write("\3\2\2\2\u00c5\33\3\2\2\2\u00c6\u00c7\5$\23\2\u00c7\35")
+        buf.write("\3\2\2\2\u00c8\u00c9\78\2\2\u00c9\37\3\2\2\2\u00ca\u00cb")
+        buf.write("\78\2\2\u00cb!\3\2\2\2\u00cc\u00cd\5$\23\2\u00cd#\3\2")
+        buf.write("\2\2\u00ce\u00cf\7\r\2\2\u00cf\u00d0\5(\25\2\u00d0\u00d1")
+        buf.write("\7\b\2\2\u00d1\u00d9\5&\24\2\u00d2\u00d4\7\66\2\2\u00d3")
+        buf.write("\u00d2\3\2\2\2\u00d4\u00d7\3\2\2\2\u00d5\u00d3\3\2\2\2")
+        buf.write("\u00d5\u00d6\3\2\2\2\u00d6\u00d8\3\2\2\2\u00d7\u00d5\3")
+        buf.write("\2\2\2\u00d8\u00da\5*\26\2\u00d9\u00d5\3\2\2\2\u00d9\u00da")
+        buf.write("\3\2\2\2\u00da\u00db\3\2\2\2\u00db\u00dc\7\f\2\2\u00dc")
+        buf.write("%\3\2\2\2\u00dd\u00de\7\65\2\2\u00de\'\3\2\2\2\u00df\u00e0")
+        buf.write("\5\2\2\2\u00e0)\3\2\2\2\u00e1\u00e5\7\21\2\2\u00e2\u00e4")
+        buf.write("\7\66\2\2\u00e3\u00e2\3\2\2\2\u00e4\u00e7\3\2\2\2\u00e5")
+        buf.write("\u00e3\3\2\2\2\u00e5\u00e6\3\2\2\2\u00e6\u00e8\3\2\2\2")
+        buf.write("\u00e7\u00e5\3\2\2\2\u00e8\u00f6\5,\27\2\u00e9\u00f2\7")
+        buf.write("\n\2\2\u00ea\u00ee\7\n\2\2\u00eb\u00ed\7\66\2\2\u00ec")
+        buf.write("\u00eb\3\2\2\2\u00ed\u00f0\3\2\2\2\u00ee\u00ec\3\2\2\2")
+        buf.write("\u00ee\u00ef\3\2\2\2\u00ef\u00f2\3\2\2\2\u00f0\u00ee\3")
+        buf.write("\2\2\2\u00f1\u00e9\3\2\2\2\u00f1\u00ea\3\2\2\2\u00f2\u00f3")
+        buf.write("\3\2\2\2\u00f3\u00f5\5,\27\2\u00f4\u00f1\3\2\2\2\u00f5")
+        buf.write("\u00f8\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2")
+        buf.write("\u00f7\u00fc\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f9\u00fb\7")
+        buf.write("\66\2\2\u00fa\u00f9\3\2\2\2\u00fb\u00fe\3\2\2\2\u00fc")
+        buf.write("\u00fa\3\2\2\2\u00fc\u00fd\3\2\2\2\u00fd\u00ff\3\2\2\2")
+        buf.write("\u00fe\u00fc\3\2\2\2\u00ff\u0100\7\20\2\2\u0100+\3\2\2")
+        buf.write("\2\u0101\u0102\5.\30\2\u0102\u0103\7\b\2\2\u0103\u0104")
+        buf.write("\t\6\2\2\u0104\u0105\5\60\31\2\u0105\u0106\t\6\2\2\u0106")
+        buf.write("-\3\2\2\2\u0107\u0108\7\65\2\2\u0108/\3\2\2\2\u0109\u010b")
+        buf.write("\t\7\2\2\u010a\u0109\3\2\2\2\u010b\u010c\3\2\2\2\u010c")
+        buf.write("\u010a\3\2\2\2\u010c\u010d\3\2\2\2\u010d\61\3\2\2\2\u010e")
+        buf.write("\u010f\7!\2\2\u010f\63\3\2\2\2\u0110\u0111\t\b\2\2\u0111")
+        buf.write("\65\3\2\2\2\u0112\u0113\t\t\2\2\u0113\67\3\2\2\2\u0114")
+        buf.write("\u0116\n\n\2\2\u0115\u0114\3\2\2\2\u0116\u0119\3\2\2\2")
+        buf.write("\u0117\u0115\3\2\2\2\u0117\u0118\3\2\2\2\u0118\u011d\3")
+        buf.write("\2\2\2\u0119\u0117\3\2\2\2\u011a\u011d\7\4\2\2\u011b\u011d")
+        buf.write("\7\5\2\2\u011c\u0117\3\2\2\2\u011c\u011a\3\2\2\2\u011c")
+        buf.write("\u011b\3\2\2\2\u011d9\3\2\2\2\u011e\u0121\5\2\2\2\u011f")
+        buf.write("\u0121\7\6\2\2\u0120\u011e\3\2\2\2\u0120\u011f\3\2\2\2")
+        buf.write("\u0121\u0122\3\2\2\2\u0122\u0120\3\2\2\2\u0122\u0123\3")
+        buf.write("\2\2\2\u0123;\3\2\2\2\u0124\u0125\5> \2\u0125\u0126\7")
+        buf.write("\r\2\2\u0126\u0127\5@!\2\u0127\u0128\7\f\2\2\u0128=\3")
+        buf.write("\2\2\2\u0129\u012a\t\13\2\2\u012a?\3\2\2\2\u012b\u0132")
+        buf.write("\5B\"\2\u012c\u0130\7\n\2\2\u012d\u012e\7\n\2\2\u012e")
+        buf.write("\u0130\7\66\2\2\u012f\u012c\3\2\2\2\u012f\u012d\3\2\2")
+        buf.write("\2\u0130\u0131\3\2\2\2\u0131\u0133\5D#\2\u0132\u012f\3")
+        buf.write("\2\2\2\u0132\u0133\3\2\2\2\u0133A\3\2\2\2\u0134\u0135")
+        buf.write("\7\64\2\2\u0135C\3\2\2\2\u0136\u0137\7\64\2\2\u0137E\3")
+        buf.write("\2\2\2\u0138\u0141\5H%\2\u0139\u013d\7\n\2\2\u013a\u013b")
+        buf.write("\7\n\2\2\u013b\u013d\7\66\2\2\u013c\u0139\3\2\2\2\u013c")
+        buf.write("\u013a\3\2\2\2\u013d\u013e\3\2\2\2\u013e\u0140\5H%\2\u013f")
+        buf.write("\u013c\3\2\2\2\u0140\u0143\3\2\2\2\u0141\u013f\3\2\2\2")
+        buf.write("\u0141\u0142\3\2\2\2\u0142G\3\2\2\2\u0143\u0141\3\2\2")
+        buf.write("\2\u0144\u0145\5J&\2\u0145\u0146\7\66\2\2\u0146\u0147")
+        buf.write("\5\4\3\2\u0147\u0148\7\66\2\2\u0148\u0149\5L\'\2\u0149")
+        buf.write("I\3\2\2\2\u014a\u014b\7\60\2\2\u014bK\3\2\2\2\u014c\u014d")
+        buf.write("\7\64\2\2\u014dM\3\2\2\2\u014e\u0157\5P)\2\u014f\u0153")
+        buf.write("\7\n\2\2\u0150\u0151\7\n\2\2\u0151\u0153\7\66\2\2\u0152")
+        buf.write("\u014f\3\2\2\2\u0152\u0150\3\2\2\2\u0153\u0154\3\2\2\2")
+        buf.write("\u0154\u0156\5P)\2\u0155\u0152\3\2\2\2\u0156\u0159\3\2")
+        buf.write("\2\2\u0157\u0155\3\2\2\2\u0157\u0158\3\2\2\2\u0158O\3")
+        buf.write("\2\2\2\u0159\u0157\3\2\2\2\u015a\u015d\5\2\2\2\u015b\u015d")
+        buf.write("\7\13\2\2\u015c\u015a\3\2\2\2\u015c\u015b\3\2\2\2\u015d")
+        buf.write("\u015e\3\2\2\2\u015e\u015c\3\2\2\2\u015e\u015f\3\2\2\2")
+        buf.write("\u015fQ\3\2\2\2#U\\u\u008b\u008d\u0092\u009a\u009f\u00a1")
+        buf.write("\u00a6\u00b0\u00b8\u00c4\u00d5\u00d9\u00e5\u00ee\u00f1")
+        buf.write("\u00f6\u00fc\u010c\u0117\u011c\u0120\u0122\u012f\u0132")
+        buf.write("\u013c\u0141\u0152\u0157\u015c\u015e")
         return buf.getvalue()
 
 
@@ -166,25 +178,27 @@ class GnosisEPLParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'-'", "'''", "'\"'", "';'", "':'", "'.'", 
-                     "','", "'*'", "')'", "'('", "']'", "'['", "'}'", "'{'", 
-                     "'+'", "'~'", "'|'", "'&'", "'^'", "'>'", "'<'", "'_'", 
-                     "'='", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+    literalNames = [ "<INVALID>", "'-'", "'''", "'\"'", "'.mp4'", "';'", 
+                     "':'", "'.'", "','", "'*'", "')'", "'('", "']'", "'['", 
+                     "'}'", "'{'", "'+'", "'~'", "'|'", "'&'", "'^'", "'>'", 
+                     "'<'", "'_'", "'='", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'?(.*)'" ]
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "'?(.*)'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "SEMI", "COLON", "DOT", "COMMA", "ASTERISK", "RPAREN", 
-                      "LPAREN", "RBRACK", "LBRACK", "RCURLY", "LCURLY", 
-                      "PLUS", "NEGATION", "VERTBAR", "BITAND", "POWER_OP", 
-                      "GTH", "LTH", "UNDERSCORE", "EQUAL", "REGISTER", "QUERY", 
-                      "OUTPUT", "CONTENT", "SELECT", "MATCH", "SPATIAL", 
-                      "TEMPORAL", "LEFT", "RIGHT", "AND", "OR", "FROM", 
-                      "WHERE", "WITHIN", "TUMLBING_TIME_WINDOW", "TUMLBING_COUNT_WINDOW", 
+                      "<INVALID>", "SEMI", "COLON", "DOT", "COMMA", "ASTERISK", 
+                      "RPAREN", "LPAREN", "RBRACK", "LBRACK", "RCURLY", 
+                      "LCURLY", "PLUS", "NEGATION", "VERTBAR", "BITAND", 
+                      "POWER_OP", "GTH", "LTH", "UNDERSCORE", "EQUAL", "REGISTER", 
+                      "QUERY", "OUTPUT", "CONTENT", "SELECT", "MATCH", "SPATIAL", 
+                      "TEMPORAL", "LEFT", "RIGHT", "BACK", "FRONT", "AND", 
+                      "OR", "FROM", "WHERE", "WITHIN", "TUMLBING_TIME_WINDOW", 
+                      "TUMLBING_COUNT_WINDOW", "SLIDING_TIME_WINDOW", "SLIDING_COUNT_WINDOW", 
                       "CONFIDENCE", "WITH_QoS", "RETURN", "OPTIONAL", "NUMBER", 
                       "WORD", "WHITESPACE", "NEWLINE", "REL_DIRECTION", 
                       "EVERYTHING" ]
@@ -195,44 +209,48 @@ class GnosisEPLParser ( Parser ):
     RULE_subcription = 3
     RULE_query_name = 4
     RULE_output_type = 5
-    RULE_separator = 6
-    RULE_content = 7
-    RULE_content_service = 8
-    RULE_match_clause = 9
-    RULE_match_type = 10
-    RULE_relationship = 11
-    RULE_left_object = 12
-    RULE_right_object = 13
-    RULE_object_ref_with_class = 14
-    RULE_object_class = 15
-    RULE_object_ref = 16
-    RULE_attributes = 17
-    RULE_attribute = 18
-    RULE_attribute_name = 19
-    RULE_attribute_value = 20
-    RULE_rel_type = 21
-    RULE_query_operator = 22
-    RULE_logical_operator = 23
-    RULE_where_clause = 24
-    RULE_publisher = 25
-    RULE_window = 26
-    RULE_window_type = 27
-    RULE_window_size = 28
-    RULE_window_length = 29
-    RULE_sliding_length = 30
-    RULE_metric_list = 31
-    RULE_metric = 32
-    RULE_metric_name = 33
-    RULE_metric_value = 34
-    RULE_node_list = 35
-    RULE_node = 36
+    RULE_output = 6
+    RULE_separator = 7
+    RULE_content = 8
+    RULE_content_service = 9
+    RULE_match_clause = 10
+    RULE_match_type = 11
+    RULE_relationship = 12
+    RULE_left_object = 13
+    RULE_left_rel_direction = 14
+    RULE_right_rel_direction = 15
+    RULE_right_object = 16
+    RULE_object_ref_with_class = 17
+    RULE_object_class = 18
+    RULE_object_ref = 19
+    RULE_attributes = 20
+    RULE_attribute = 21
+    RULE_attribute_name = 22
+    RULE_attribute_value = 23
+    RULE_operator_type = 24
+    RULE_query_operator = 25
+    RULE_logical_operator = 26
+    RULE_where_clause = 27
+    RULE_publisher = 28
+    RULE_window = 29
+    RULE_window_type = 30
+    RULE_window_size = 31
+    RULE_window_length = 32
+    RULE_sliding_length = 33
+    RULE_metric_list = 34
+    RULE_metric = 35
+    RULE_metric_name = 36
+    RULE_metric_value = 37
+    RULE_node_list = 38
+    RULE_node = 39
 
     ruleNames =  [ "alphanumeric", "comparison_operator", "query", "subcription", 
-                   "query_name", "output_type", "separator", "content", 
+                   "query_name", "output_type", "output", "separator", "content", 
                    "content_service", "match_clause", "match_type", "relationship", 
-                   "left_object", "right_object", "object_ref_with_class", 
-                   "object_class", "object_ref", "attributes", "attribute", 
-                   "attribute_name", "attribute_value", "rel_type", "query_operator", 
+                   "left_object", "left_rel_direction", "right_rel_direction", 
+                   "right_object", "object_ref_with_class", "object_class", 
+                   "object_ref", "attributes", "attribute", "attribute_name", 
+                   "attribute_value", "operator_type", "query_operator", 
                    "logical_operator", "where_clause", "publisher", "window", 
                    "window_type", "window_size", "window_length", "sliding_length", 
                    "metric_list", "metric", "metric_name", "metric_value", 
@@ -242,53 +260,58 @@ class GnosisEPLParser ( Parser ):
     T__0=1
     T__1=2
     T__2=3
-    SEMI=4
-    COLON=5
-    DOT=6
-    COMMA=7
-    ASTERISK=8
-    RPAREN=9
-    LPAREN=10
-    RBRACK=11
-    LBRACK=12
-    RCURLY=13
-    LCURLY=14
-    PLUS=15
-    NEGATION=16
-    VERTBAR=17
-    BITAND=18
-    POWER_OP=19
-    GTH=20
-    LTH=21
-    UNDERSCORE=22
-    EQUAL=23
-    REGISTER=24
-    QUERY=25
-    OUTPUT=26
-    CONTENT=27
-    SELECT=28
-    MATCH=29
-    SPATIAL=30
-    TEMPORAL=31
-    LEFT=32
-    RIGHT=33
-    AND=34
-    OR=35
-    FROM=36
-    WHERE=37
-    WITHIN=38
-    TUMLBING_TIME_WINDOW=39
-    TUMLBING_COUNT_WINDOW=40
-    CONFIDENCE=41
-    WITH_QoS=42
-    RETURN=43
-    OPTIONAL=44
-    NUMBER=45
-    WORD=46
-    WHITESPACE=47
-    NEWLINE=48
-    REL_DIRECTION=49
-    EVERYTHING=50
+    T__3=4
+    SEMI=5
+    COLON=6
+    DOT=7
+    COMMA=8
+    ASTERISK=9
+    RPAREN=10
+    LPAREN=11
+    RBRACK=12
+    LBRACK=13
+    RCURLY=14
+    LCURLY=15
+    PLUS=16
+    NEGATION=17
+    VERTBAR=18
+    BITAND=19
+    POWER_OP=20
+    GTH=21
+    LTH=22
+    UNDERSCORE=23
+    EQUAL=24
+    REGISTER=25
+    QUERY=26
+    OUTPUT=27
+    CONTENT=28
+    SELECT=29
+    MATCH=30
+    SPATIAL=31
+    TEMPORAL=32
+    LEFT=33
+    RIGHT=34
+    BACK=35
+    FRONT=36
+    AND=37
+    OR=38
+    FROM=39
+    WHERE=40
+    WITHIN=41
+    TUMLBING_TIME_WINDOW=42
+    TUMLBING_COUNT_WINDOW=43
+    SLIDING_TIME_WINDOW=44
+    SLIDING_COUNT_WINDOW=45
+    CONFIDENCE=46
+    WITH_QoS=47
+    RETURN=48
+    OPTIONAL=49
+    NUMBER=50
+    WORD=51
+    WHITESPACE=52
+    NEWLINE=53
+    REL_DIRECTION=54
+    EVERYTHING=55
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -338,22 +361,24 @@ class GnosisEPLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 75 
+            self.state = 81 
             self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while True:
-                self.state = 74
-                _la = self._input.LA(1)
-                if not(_la==GnosisEPLParser.NUMBER or _la==GnosisEPLParser.WORD):
-                    self._errHandler.recoverInline(self)
+            _alt = 1
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
+                    self.state = 80
+                    _la = self._input.LA(1)
+                    if not(_la==GnosisEPLParser.NUMBER or _la==GnosisEPLParser.WORD):
+                        self._errHandler.recoverInline(self)
+                    else:
+                        self._errHandler.reportMatch(self)
+                        self.consume()
+
                 else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 77 
+                    raise NoViableAltException(self)
+                self.state = 83 
                 self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==GnosisEPLParser.NUMBER or _la==GnosisEPLParser.WORD):
-                    break
+                _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -400,7 +425,7 @@ class GnosisEPLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
+            self.state = 85
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.GTH) | (1 << GnosisEPLParser.LTH) | (1 << GnosisEPLParser.EQUAL))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -453,19 +478,19 @@ class GnosisEPLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 82 
+            self.state = 88 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 81
+                self.state = 87
                 self.subcription()
-                self.state = 84 
+                self.state = 90 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==GnosisEPLParser.REGISTER):
                     break
 
-            self.state = 86
+            self.state = 92
             self.match(GnosisEPLParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -575,75 +600,75 @@ class GnosisEPLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
-            self.match(GnosisEPLParser.REGISTER)
-            self.state = 89
-            self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 90
-            self.match(GnosisEPLParser.QUERY)
-            self.state = 91
-            self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 92
-            self.query_name()
-            self.state = 93
-            self.separator()
             self.state = 94
-            self.match(GnosisEPLParser.OUTPUT)
+            self.match(GnosisEPLParser.REGISTER)
             self.state = 95
             self.match(GnosisEPLParser.WHITESPACE)
             self.state = 96
-            self.output_type()
+            self.match(GnosisEPLParser.QUERY)
             self.state = 97
-            self.separator()
+            self.match(GnosisEPLParser.WHITESPACE)
             self.state = 98
-            self.match(GnosisEPLParser.CONTENT)
+            self.query_name()
             self.state = 99
-            self.match(GnosisEPLParser.WHITESPACE)
+            self.separator()
             self.state = 100
-            self.content()
+            self.match(GnosisEPLParser.OUTPUT)
             self.state = 101
-            self.separator()
-            self.state = 102
-            self.match(GnosisEPLParser.MATCH)
-            self.state = 103
             self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 104
-            self.match_clause()
-            self.state = 105
+            self.state = 102
+            self.output_type()
+            self.state = 103
             self.separator()
+            self.state = 104
+            self.match(GnosisEPLParser.CONTENT)
+            self.state = 105
+            self.match(GnosisEPLParser.WHITESPACE)
+            self.state = 106
+            self.content()
+            self.state = 107
+            self.separator()
+            self.state = 108
+            self.match(GnosisEPLParser.MATCH)
             self.state = 109
+            self.match(GnosisEPLParser.WHITESPACE)
+            self.state = 110
+            self.match_clause()
+            self.state = 111
+            self.separator()
+            self.state = 115
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==GnosisEPLParser.WHERE:
-                self.state = 106
+                self.state = 112
                 self.match(GnosisEPLParser.WHERE)
-                self.state = 107
+                self.state = 113
                 self.match(GnosisEPLParser.WHITESPACE)
-                self.state = 108
+                self.state = 114
                 self.where_clause()
 
 
-            self.state = 111
-            self.match(GnosisEPLParser.FROM)
-            self.state = 112
-            self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 113
-            self.publisher()
-            self.state = 114
-            self.separator()
-            self.state = 115
-            self.match(GnosisEPLParser.WITHIN)
-            self.state = 116
-            self.match(GnosisEPLParser.WHITESPACE)
             self.state = 117
-            self.window()
+            self.match(GnosisEPLParser.FROM)
             self.state = 118
-            self.separator()
-            self.state = 119
-            self.match(GnosisEPLParser.RETURN)
-            self.state = 120
             self.match(GnosisEPLParser.WHITESPACE)
+            self.state = 119
+            self.publisher()
+            self.state = 120
+            self.separator()
             self.state = 121
+            self.match(GnosisEPLParser.WITHIN)
+            self.state = 122
+            self.match(GnosisEPLParser.WHITESPACE)
+            self.state = 123
+            self.window()
+            self.state = 124
+            self.separator()
+            self.state = 125
+            self.match(GnosisEPLParser.RETURN)
+            self.state = 126
+            self.match(GnosisEPLParser.WHITESPACE)
+            self.state = 127
             self.node_list()
         except RecognitionException as re:
             localctx.exception = re
@@ -683,7 +708,7 @@ class GnosisEPLParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_query_name)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 123
+            self.state = 129
             self.match(GnosisEPLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -700,8 +725,24 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self):
-            return self.getToken(GnosisEPLParser.WORD, 0)
+        def output(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(GnosisEPLParser.OutputContext)
+            else:
+                return self.getTypedRuleContext(GnosisEPLParser.OutputContext,i)
+
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(GnosisEPLParser.COMMA)
+            else:
+                return self.getToken(GnosisEPLParser.COMMA, i)
+
+        def WHITESPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(GnosisEPLParser.WHITESPACE)
+            else:
+                return self.getToken(GnosisEPLParser.WHITESPACE, i)
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_output_type
@@ -721,9 +762,86 @@ class GnosisEPLParser ( Parser ):
 
         localctx = GnosisEPLParser.Output_typeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_output_type)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 125
+            self.state = 131
+            self.output()
+            self.state = 144
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==GnosisEPLParser.COMMA:
+                self.state = 139
+                self._errHandler.sync(self)
+                la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+                if la_ == 1:
+                    self.state = 132
+                    self.match(GnosisEPLParser.COMMA)
+                    pass
+
+                elif la_ == 2:
+                    self.state = 133
+                    self.match(GnosisEPLParser.COMMA)
+                    self.state = 135 
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while True:
+                        self.state = 134
+                        self.match(GnosisEPLParser.WHITESPACE)
+                        self.state = 137 
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+                        if not (_la==GnosisEPLParser.WHITESPACE):
+                            break
+
+                    pass
+
+
+                self.state = 141
+                self.output()
+                self.state = 146
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class OutputContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def WORD(self):
+            return self.getToken(GnosisEPLParser.WORD, 0)
+
+        def getRuleIndex(self):
+            return GnosisEPLParser.RULE_output
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOutput" ):
+                listener.enterOutput(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOutput" ):
+                listener.exitOutput(self)
+
+
+
+
+    def output(self):
+
+        localctx = GnosisEPLParser.OutputContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 12, self.RULE_output)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 147
             self.match(GnosisEPLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -769,22 +887,22 @@ class GnosisEPLParser ( Parser ):
     def separator(self):
 
         localctx = GnosisEPLParser.SeparatorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_separator)
+        self.enterRule(localctx, 14, self.RULE_separator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 128 
+            self.state = 150 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 127
+                self.state = 149
                 _la = self._input.LA(1)
                 if not(_la==GnosisEPLParser.WHITESPACE or _la==GnosisEPLParser.NEWLINE):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 130 
+                self.state = 152 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==GnosisEPLParser.WHITESPACE or _la==GnosisEPLParser.NEWLINE):
@@ -841,27 +959,27 @@ class GnosisEPLParser ( Parser ):
     def content(self):
 
         localctx = GnosisEPLParser.ContentContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_content)
+        self.enterRule(localctx, 16, self.RULE_content)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 135 
+            self.state = 157 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 135
+                    self.state = 157
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
                     if token in [GnosisEPLParser.T__0, GnosisEPLParser.WORD]:
-                        self.state = 132
+                        self.state = 154
                         self.content_service()
                         pass
                     elif token in [GnosisEPLParser.COMMA]:
-                        self.state = 133
+                        self.state = 155
                         self.match(GnosisEPLParser.COMMA)
                         pass
                     elif token in [GnosisEPLParser.WHITESPACE]:
-                        self.state = 134
+                        self.state = 156
                         self.match(GnosisEPLParser.WHITESPACE)
                         pass
                     else:
@@ -870,9 +988,9 @@ class GnosisEPLParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 137 
+                self.state = 159 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -912,16 +1030,16 @@ class GnosisEPLParser ( Parser ):
     def content_service(self):
 
         localctx = GnosisEPLParser.Content_serviceContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_content_service)
+        self.enterRule(localctx, 18, self.RULE_content_service)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 140 
+            self.state = 162 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 139
+                    self.state = 161
                     _la = self._input.LA(1)
                     if not(_la==GnosisEPLParser.T__0 or _la==GnosisEPLParser.WORD):
                         self._errHandler.recoverInline(self)
@@ -931,9 +1049,9 @@ class GnosisEPLParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 142 
+                self.state = 164 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -987,27 +1105,27 @@ class GnosisEPLParser ( Parser ):
     def match_clause(self):
 
         localctx = GnosisEPLParser.Match_clauseContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_match_clause)
+        self.enterRule(localctx, 20, self.RULE_match_clause)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 144
+            self.state = 166
             self.relationship()
-            self.state = 152
+            self.state = 174
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 145
+                    self.state = 167
                     self.match(GnosisEPLParser.WHITESPACE)
-                    self.state = 146
+                    self.state = 168
                     self.match_type()
-                    self.state = 147
+                    self.state = 169
                     self.match(GnosisEPLParser.WHITESPACE)
-                    self.state = 148
+                    self.state = 170
                     self.relationship() 
-                self.state = 154
+                self.state = 176
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1054,26 +1172,26 @@ class GnosisEPLParser ( Parser ):
     def match_type(self):
 
         localctx = GnosisEPLParser.Match_typeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_match_type)
+        self.enterRule(localctx, 22, self.RULE_match_type)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 160
+            self.state = 182
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [GnosisEPLParser.MATCH]:
-                self.state = 155
+                self.state = 177
                 self.match(GnosisEPLParser.MATCH)
                 pass
             elif token in [GnosisEPLParser.OPTIONAL]:
-                self.state = 156
+                self.state = 178
                 self.match(GnosisEPLParser.OPTIONAL)
-                self.state = 157
+                self.state = 179
                 self.match(GnosisEPLParser.WHITESPACE)
-                self.state = 158
+                self.state = 180
                 self.match(GnosisEPLParser.MATCH)
                 pass
             elif token in [GnosisEPLParser.AND, GnosisEPLParser.OR]:
-                self.state = 159
+                self.state = 181
                 self.logical_operator()
                 pass
             else:
@@ -1098,17 +1216,15 @@ class GnosisEPLParser ( Parser ):
             return self.getTypedRuleContext(GnosisEPLParser.Left_objectContext,0)
 
 
-        def REL_DIRECTION(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.REL_DIRECTION)
-            else:
-                return self.getToken(GnosisEPLParser.REL_DIRECTION, i)
+        def left_rel_direction(self):
+            return self.getTypedRuleContext(GnosisEPLParser.Left_rel_directionContext,0)
+
 
         def LBRACK(self):
             return self.getToken(GnosisEPLParser.LBRACK, 0)
 
-        def rel_type(self):
-            return self.getTypedRuleContext(GnosisEPLParser.Rel_typeContext,0)
+        def operator_type(self):
+            return self.getTypedRuleContext(GnosisEPLParser.Operator_typeContext,0)
 
 
         def COLON(self):
@@ -1120,6 +1236,10 @@ class GnosisEPLParser ( Parser ):
 
         def RBRACK(self):
             return self.getToken(GnosisEPLParser.RBRACK, 0)
+
+        def right_rel_direction(self):
+            return self.getTypedRuleContext(GnosisEPLParser.Right_rel_directionContext,0)
+
 
         def right_object(self):
             return self.getTypedRuleContext(GnosisEPLParser.Right_objectContext,0)
@@ -1142,31 +1262,31 @@ class GnosisEPLParser ( Parser ):
     def relationship(self):
 
         localctx = GnosisEPLParser.RelationshipContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_relationship)
+        self.enterRule(localctx, 24, self.RULE_relationship)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 162
+            self.state = 184
             self.left_object()
-            self.state = 172
+            self.state = 194
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==GnosisEPLParser.REL_DIRECTION:
-                self.state = 163
-                self.match(GnosisEPLParser.REL_DIRECTION)
-                self.state = 164
+                self.state = 185
+                self.left_rel_direction()
+                self.state = 186
                 self.match(GnosisEPLParser.LBRACK)
-                self.state = 165
-                self.rel_type()
-                self.state = 166
+                self.state = 187
+                self.operator_type()
+                self.state = 188
                 self.match(GnosisEPLParser.COLON)
-                self.state = 167
+                self.state = 189
                 self.query_operator()
-                self.state = 168
+                self.state = 190
                 self.match(GnosisEPLParser.RBRACK)
-                self.state = 169
-                self.match(GnosisEPLParser.REL_DIRECTION)
-                self.state = 170
+                self.state = 191
+                self.right_rel_direction()
+                self.state = 192
                 self.right_object()
 
 
@@ -1206,11 +1326,91 @@ class GnosisEPLParser ( Parser ):
     def left_object(self):
 
         localctx = GnosisEPLParser.Left_objectContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_left_object)
+        self.enterRule(localctx, 26, self.RULE_left_object)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 174
+            self.state = 196
             self.object_ref_with_class()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Left_rel_directionContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def REL_DIRECTION(self):
+            return self.getToken(GnosisEPLParser.REL_DIRECTION, 0)
+
+        def getRuleIndex(self):
+            return GnosisEPLParser.RULE_left_rel_direction
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLeft_rel_direction" ):
+                listener.enterLeft_rel_direction(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLeft_rel_direction" ):
+                listener.exitLeft_rel_direction(self)
+
+
+
+
+    def left_rel_direction(self):
+
+        localctx = GnosisEPLParser.Left_rel_directionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_left_rel_direction)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 198
+            self.match(GnosisEPLParser.REL_DIRECTION)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Right_rel_directionContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def REL_DIRECTION(self):
+            return self.getToken(GnosisEPLParser.REL_DIRECTION, 0)
+
+        def getRuleIndex(self):
+            return GnosisEPLParser.RULE_right_rel_direction
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRight_rel_direction" ):
+                listener.enterRight_rel_direction(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRight_rel_direction" ):
+                listener.exitRight_rel_direction(self)
+
+
+
+
+    def right_rel_direction(self):
+
+        localctx = GnosisEPLParser.Right_rel_directionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 30, self.RULE_right_rel_direction)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 200
+            self.match(GnosisEPLParser.REL_DIRECTION)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1247,10 +1447,10 @@ class GnosisEPLParser ( Parser ):
     def right_object(self):
 
         localctx = GnosisEPLParser.Right_objectContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_right_object)
+        self.enterRule(localctx, 32, self.RULE_right_object)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 176
+            self.state = 202
             self.object_ref_with_class()
         except RecognitionException as re:
             localctx.exception = re
@@ -1311,37 +1511,37 @@ class GnosisEPLParser ( Parser ):
     def object_ref_with_class(self):
 
         localctx = GnosisEPLParser.Object_ref_with_classContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_object_ref_with_class)
+        self.enterRule(localctx, 34, self.RULE_object_ref_with_class)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 178
+            self.state = 204
             self.match(GnosisEPLParser.LPAREN)
-            self.state = 179
+            self.state = 205
             self.object_ref()
-            self.state = 180
+            self.state = 206
             self.match(GnosisEPLParser.COLON)
-            self.state = 181
+            self.state = 207
             self.object_class()
-            self.state = 189
+            self.state = 215
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==GnosisEPLParser.LCURLY or _la==GnosisEPLParser.WHITESPACE:
-                self.state = 185
+                self.state = 211
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==GnosisEPLParser.WHITESPACE:
-                    self.state = 182
+                    self.state = 208
                     self.match(GnosisEPLParser.WHITESPACE)
-                    self.state = 187
+                    self.state = 213
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 188
+                self.state = 214
                 self.attributes()
 
 
-            self.state = 191
+            self.state = 217
             self.match(GnosisEPLParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -1378,10 +1578,10 @@ class GnosisEPLParser ( Parser ):
     def object_class(self):
 
         localctx = GnosisEPLParser.Object_classContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_object_class)
+        self.enterRule(localctx, 36, self.RULE_object_class)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 193
+            self.state = 219
             self.match(GnosisEPLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -1419,10 +1619,10 @@ class GnosisEPLParser ( Parser ):
     def object_ref(self):
 
         localctx = GnosisEPLParser.Object_refContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_object_ref)
+        self.enterRule(localctx, 38, self.RULE_object_ref)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 195
+            self.state = 221
             self.alphanumeric()
         except RecognitionException as re:
             localctx.exception = re
@@ -1481,69 +1681,69 @@ class GnosisEPLParser ( Parser ):
     def attributes(self):
 
         localctx = GnosisEPLParser.AttributesContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_attributes)
+        self.enterRule(localctx, 40, self.RULE_attributes)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 197
+            self.state = 223
             self.match(GnosisEPLParser.LCURLY)
-            self.state = 201
+            self.state = 227
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==GnosisEPLParser.WHITESPACE:
-                self.state = 198
+                self.state = 224
                 self.match(GnosisEPLParser.WHITESPACE)
-                self.state = 203
+                self.state = 229
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 204
+            self.state = 230
             self.attribute()
-            self.state = 218
+            self.state = 244
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==GnosisEPLParser.COMMA:
-                self.state = 213
+                self.state = 239
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
                 if la_ == 1:
-                    self.state = 205
+                    self.state = 231
                     self.match(GnosisEPLParser.COMMA)
                     pass
 
                 elif la_ == 2:
-                    self.state = 206
+                    self.state = 232
                     self.match(GnosisEPLParser.COMMA)
-                    self.state = 210
+                    self.state = 236
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     while _la==GnosisEPLParser.WHITESPACE:
-                        self.state = 207
+                        self.state = 233
                         self.match(GnosisEPLParser.WHITESPACE)
-                        self.state = 212
+                        self.state = 238
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
 
                     pass
 
 
-                self.state = 215
+                self.state = 241
                 self.attribute()
-                self.state = 220
+                self.state = 246
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 224
+            self.state = 250
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==GnosisEPLParser.WHITESPACE:
-                self.state = 221
+                self.state = 247
                 self.match(GnosisEPLParser.WHITESPACE)
-                self.state = 226
+                self.state = 252
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 227
+            self.state = 253
             self.match(GnosisEPLParser.RCURLY)
         except RecognitionException as re:
             localctx.exception = re
@@ -1588,24 +1788,24 @@ class GnosisEPLParser ( Parser ):
     def attribute(self):
 
         localctx = GnosisEPLParser.AttributeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_attribute)
+        self.enterRule(localctx, 42, self.RULE_attribute)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 229
+            self.state = 255
             self.attribute_name()
-            self.state = 230
+            self.state = 256
             self.match(GnosisEPLParser.COLON)
-            self.state = 231
+            self.state = 257
             _la = self._input.LA(1)
             if not(_la==GnosisEPLParser.T__1 or _la==GnosisEPLParser.T__2):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 232
+            self.state = 258
             self.attribute_value()
-            self.state = 233
+            self.state = 259
             _la = self._input.LA(1)
             if not(_la==GnosisEPLParser.T__1 or _la==GnosisEPLParser.T__2):
                 self._errHandler.recoverInline(self)
@@ -1647,10 +1847,10 @@ class GnosisEPLParser ( Parser ):
     def attribute_name(self):
 
         localctx = GnosisEPLParser.Attribute_nameContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_attribute_name)
+        self.enterRule(localctx, 44, self.RULE_attribute_name)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 235
+            self.state = 261
             self.match(GnosisEPLParser.WORD)
         except RecognitionException as re:
             localctx.exception = re
@@ -1696,22 +1896,22 @@ class GnosisEPLParser ( Parser ):
     def attribute_value(self):
 
         localctx = GnosisEPLParser.Attribute_valueContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_attribute_value)
+        self.enterRule(localctx, 46, self.RULE_attribute_value)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 238 
+            self.state = 264 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 237
+                self.state = 263
                 _la = self._input.LA(1)
                 if not(_la==GnosisEPLParser.WORD or _la==GnosisEPLParser.WHITESPACE):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 240 
+                self.state = 266 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==GnosisEPLParser.WORD or _la==GnosisEPLParser.WHITESPACE):
@@ -1726,62 +1926,37 @@ class GnosisEPLParser ( Parser ):
         return localctx
 
 
-    class Rel_typeContext(ParserRuleContext):
+    class Operator_typeContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def SPATIAL(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.SPATIAL)
-            else:
-                return self.getToken(GnosisEPLParser.SPATIAL, i)
-
-        def TEMPORAL(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.TEMPORAL)
-            else:
-                return self.getToken(GnosisEPLParser.TEMPORAL, i)
+        def SPATIAL(self):
+            return self.getToken(GnosisEPLParser.SPATIAL, 0)
 
         def getRuleIndex(self):
-            return GnosisEPLParser.RULE_rel_type
+            return GnosisEPLParser.RULE_operator_type
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRel_type" ):
-                listener.enterRel_type(self)
+            if hasattr( listener, "enterOperator_type" ):
+                listener.enterOperator_type(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRel_type" ):
-                listener.exitRel_type(self)
+            if hasattr( listener, "exitOperator_type" ):
+                listener.exitOperator_type(self)
 
 
 
 
-    def rel_type(self):
+    def operator_type(self):
 
-        localctx = GnosisEPLParser.Rel_typeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 42, self.RULE_rel_type)
-        self._la = 0 # Token type
+        localctx = GnosisEPLParser.Operator_typeContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_operator_type)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 243 
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while True:
-                self.state = 242
-                _la = self._input.LA(1)
-                if not(_la==GnosisEPLParser.SPATIAL or _la==GnosisEPLParser.TEMPORAL):
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 245 
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==GnosisEPLParser.SPATIAL or _la==GnosisEPLParser.TEMPORAL):
-                    break
-
+            self.state = 268
+            self.match(GnosisEPLParser.SPATIAL)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1797,17 +1972,17 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def LEFT(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.LEFT)
-            else:
-                return self.getToken(GnosisEPLParser.LEFT, i)
+        def LEFT(self):
+            return self.getToken(GnosisEPLParser.LEFT, 0)
 
-        def RIGHT(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.RIGHT)
-            else:
-                return self.getToken(GnosisEPLParser.RIGHT, i)
+        def RIGHT(self):
+            return self.getToken(GnosisEPLParser.RIGHT, 0)
+
+        def BACK(self):
+            return self.getToken(GnosisEPLParser.BACK, 0)
+
+        def FRONT(self):
+            return self.getToken(GnosisEPLParser.FRONT, 0)
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_query_operator
@@ -1826,27 +2001,17 @@ class GnosisEPLParser ( Parser ):
     def query_operator(self):
 
         localctx = GnosisEPLParser.Query_operatorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 44, self.RULE_query_operator)
+        self.enterRule(localctx, 50, self.RULE_query_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 248 
-            self._errHandler.sync(self)
+            self.state = 270
             _la = self._input.LA(1)
-            while True:
-                self.state = 247
-                _la = self._input.LA(1)
-                if not(_la==GnosisEPLParser.LEFT or _la==GnosisEPLParser.RIGHT):
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 250 
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==GnosisEPLParser.LEFT or _la==GnosisEPLParser.RIGHT):
-                    break
-
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.LEFT) | (1 << GnosisEPLParser.RIGHT) | (1 << GnosisEPLParser.BACK) | (1 << GnosisEPLParser.FRONT))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1885,11 +2050,11 @@ class GnosisEPLParser ( Parser ):
     def logical_operator(self):
 
         localctx = GnosisEPLParser.Logical_operatorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 46, self.RULE_logical_operator)
+        self.enterRule(localctx, 52, self.RULE_logical_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 252
+            self.state = 272
             _la = self._input.LA(1)
             if not(_la==GnosisEPLParser.AND or _la==GnosisEPLParser.OR):
                 self._errHandler.recoverInline(self)
@@ -1934,38 +2099,38 @@ class GnosisEPLParser ( Parser ):
     def where_clause(self):
 
         localctx = GnosisEPLParser.Where_clauseContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 48, self.RULE_where_clause)
+        self.enterRule(localctx, 54, self.RULE_where_clause)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 262
+            self.state = 282
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,21,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,22,self._ctx)
             if la_ == 1:
-                self.state = 257
+                self.state = 277
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.T__0) | (1 << GnosisEPLParser.T__1) | (1 << GnosisEPLParser.T__2) | (1 << GnosisEPLParser.SEMI) | (1 << GnosisEPLParser.COLON) | (1 << GnosisEPLParser.DOT) | (1 << GnosisEPLParser.COMMA) | (1 << GnosisEPLParser.ASTERISK) | (1 << GnosisEPLParser.RPAREN) | (1 << GnosisEPLParser.LPAREN) | (1 << GnosisEPLParser.RBRACK) | (1 << GnosisEPLParser.LBRACK) | (1 << GnosisEPLParser.RCURLY) | (1 << GnosisEPLParser.LCURLY) | (1 << GnosisEPLParser.PLUS) | (1 << GnosisEPLParser.NEGATION) | (1 << GnosisEPLParser.VERTBAR) | (1 << GnosisEPLParser.BITAND) | (1 << GnosisEPLParser.POWER_OP) | (1 << GnosisEPLParser.GTH) | (1 << GnosisEPLParser.LTH) | (1 << GnosisEPLParser.UNDERSCORE) | (1 << GnosisEPLParser.EQUAL) | (1 << GnosisEPLParser.REGISTER) | (1 << GnosisEPLParser.QUERY) | (1 << GnosisEPLParser.OUTPUT) | (1 << GnosisEPLParser.CONTENT) | (1 << GnosisEPLParser.SELECT) | (1 << GnosisEPLParser.MATCH) | (1 << GnosisEPLParser.SPATIAL) | (1 << GnosisEPLParser.TEMPORAL) | (1 << GnosisEPLParser.LEFT) | (1 << GnosisEPLParser.RIGHT) | (1 << GnosisEPLParser.AND) | (1 << GnosisEPLParser.OR) | (1 << GnosisEPLParser.WHERE) | (1 << GnosisEPLParser.WITHIN) | (1 << GnosisEPLParser.TUMLBING_TIME_WINDOW) | (1 << GnosisEPLParser.TUMLBING_COUNT_WINDOW) | (1 << GnosisEPLParser.CONFIDENCE) | (1 << GnosisEPLParser.WITH_QoS) | (1 << GnosisEPLParser.RETURN) | (1 << GnosisEPLParser.OPTIONAL) | (1 << GnosisEPLParser.NUMBER) | (1 << GnosisEPLParser.WORD) | (1 << GnosisEPLParser.WHITESPACE) | (1 << GnosisEPLParser.NEWLINE) | (1 << GnosisEPLParser.REL_DIRECTION) | (1 << GnosisEPLParser.EVERYTHING))) != 0):
-                    self.state = 254
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.T__0) | (1 << GnosisEPLParser.T__1) | (1 << GnosisEPLParser.T__2) | (1 << GnosisEPLParser.T__3) | (1 << GnosisEPLParser.SEMI) | (1 << GnosisEPLParser.COLON) | (1 << GnosisEPLParser.DOT) | (1 << GnosisEPLParser.COMMA) | (1 << GnosisEPLParser.ASTERISK) | (1 << GnosisEPLParser.RPAREN) | (1 << GnosisEPLParser.LPAREN) | (1 << GnosisEPLParser.RBRACK) | (1 << GnosisEPLParser.LBRACK) | (1 << GnosisEPLParser.RCURLY) | (1 << GnosisEPLParser.LCURLY) | (1 << GnosisEPLParser.PLUS) | (1 << GnosisEPLParser.NEGATION) | (1 << GnosisEPLParser.VERTBAR) | (1 << GnosisEPLParser.BITAND) | (1 << GnosisEPLParser.POWER_OP) | (1 << GnosisEPLParser.GTH) | (1 << GnosisEPLParser.LTH) | (1 << GnosisEPLParser.UNDERSCORE) | (1 << GnosisEPLParser.EQUAL) | (1 << GnosisEPLParser.REGISTER) | (1 << GnosisEPLParser.QUERY) | (1 << GnosisEPLParser.OUTPUT) | (1 << GnosisEPLParser.CONTENT) | (1 << GnosisEPLParser.SELECT) | (1 << GnosisEPLParser.MATCH) | (1 << GnosisEPLParser.SPATIAL) | (1 << GnosisEPLParser.TEMPORAL) | (1 << GnosisEPLParser.LEFT) | (1 << GnosisEPLParser.RIGHT) | (1 << GnosisEPLParser.BACK) | (1 << GnosisEPLParser.FRONT) | (1 << GnosisEPLParser.AND) | (1 << GnosisEPLParser.OR) | (1 << GnosisEPLParser.WHERE) | (1 << GnosisEPLParser.WITHIN) | (1 << GnosisEPLParser.TUMLBING_TIME_WINDOW) | (1 << GnosisEPLParser.TUMLBING_COUNT_WINDOW) | (1 << GnosisEPLParser.SLIDING_TIME_WINDOW) | (1 << GnosisEPLParser.SLIDING_COUNT_WINDOW) | (1 << GnosisEPLParser.CONFIDENCE) | (1 << GnosisEPLParser.WITH_QoS) | (1 << GnosisEPLParser.RETURN) | (1 << GnosisEPLParser.OPTIONAL) | (1 << GnosisEPLParser.NUMBER) | (1 << GnosisEPLParser.WORD) | (1 << GnosisEPLParser.WHITESPACE) | (1 << GnosisEPLParser.NEWLINE) | (1 << GnosisEPLParser.REL_DIRECTION) | (1 << GnosisEPLParser.EVERYTHING))) != 0):
+                    self.state = 274
                     _la = self._input.LA(1)
                     if _la <= 0 or _la==GnosisEPLParser.FROM:
                         self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
                         self.consume()
-                    self.state = 259
+                    self.state = 279
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
                 pass
 
             elif la_ == 2:
-                self.state = 260
+                self.state = 280
                 self.match(GnosisEPLParser.T__1)
                 pass
 
             elif la_ == 3:
-                self.state = 261
+                self.state = 281
                 self.match(GnosisEPLParser.T__2)
                 pass
 
@@ -1985,8 +2150,11 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def alphanumeric(self):
-            return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,0)
+        def alphanumeric(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(GnosisEPLParser.AlphanumericContext)
+            else:
+                return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,i)
 
 
         def getRuleIndex(self):
@@ -2006,11 +2174,34 @@ class GnosisEPLParser ( Parser ):
     def publisher(self):
 
         localctx = GnosisEPLParser.PublisherContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 50, self.RULE_publisher)
+        self.enterRule(localctx, 56, self.RULE_publisher)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 264
-            self.alphanumeric()
+            self.state = 286 
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while True:
+                self.state = 286
+                self._errHandler.sync(self)
+                token = self._input.LA(1)
+                if token in [GnosisEPLParser.NUMBER, GnosisEPLParser.WORD]:
+                    self.state = 284
+                    self.alphanumeric()
+                    pass
+                elif token in [GnosisEPLParser.T__3]:
+                    self.state = 285
+                    self.match(GnosisEPLParser.T__3)
+                    pass
+                else:
+                    raise NoViableAltException(self)
+
+                self.state = 288 
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.T__3) | (1 << GnosisEPLParser.NUMBER) | (1 << GnosisEPLParser.WORD))) != 0)):
+                    break
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2057,16 +2248,16 @@ class GnosisEPLParser ( Parser ):
     def window(self):
 
         localctx = GnosisEPLParser.WindowContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 52, self.RULE_window)
+        self.enterRule(localctx, 58, self.RULE_window)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 266
+            self.state = 290
             self.window_type()
-            self.state = 267
+            self.state = 291
             self.match(GnosisEPLParser.LPAREN)
-            self.state = 268
+            self.state = 292
             self.window_size()
-            self.state = 269
+            self.state = 293
             self.match(GnosisEPLParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -2083,17 +2274,17 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def TUMLBING_TIME_WINDOW(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.TUMLBING_TIME_WINDOW)
-            else:
-                return self.getToken(GnosisEPLParser.TUMLBING_TIME_WINDOW, i)
+        def TUMLBING_TIME_WINDOW(self):
+            return self.getToken(GnosisEPLParser.TUMLBING_TIME_WINDOW, 0)
 
-        def TUMLBING_COUNT_WINDOW(self, i:int=None):
-            if i is None:
-                return self.getTokens(GnosisEPLParser.TUMLBING_COUNT_WINDOW)
-            else:
-                return self.getToken(GnosisEPLParser.TUMLBING_COUNT_WINDOW, i)
+        def TUMLBING_COUNT_WINDOW(self):
+            return self.getToken(GnosisEPLParser.TUMLBING_COUNT_WINDOW, 0)
+
+        def SLIDING_TIME_WINDOW(self):
+            return self.getToken(GnosisEPLParser.SLIDING_TIME_WINDOW, 0)
+
+        def SLIDING_COUNT_WINDOW(self):
+            return self.getToken(GnosisEPLParser.SLIDING_COUNT_WINDOW, 0)
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_window_type
@@ -2112,27 +2303,17 @@ class GnosisEPLParser ( Parser ):
     def window_type(self):
 
         localctx = GnosisEPLParser.Window_typeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 54, self.RULE_window_type)
+        self.enterRule(localctx, 60, self.RULE_window_type)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 272 
-            self._errHandler.sync(self)
+            self.state = 295
             _la = self._input.LA(1)
-            while True:
-                self.state = 271
-                _la = self._input.LA(1)
-                if not(_la==GnosisEPLParser.TUMLBING_TIME_WINDOW or _la==GnosisEPLParser.TUMLBING_COUNT_WINDOW):
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 274 
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==GnosisEPLParser.TUMLBING_TIME_WINDOW or _la==GnosisEPLParser.TUMLBING_COUNT_WINDOW):
-                    break
-
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.TUMLBING_TIME_WINDOW) | (1 << GnosisEPLParser.TUMLBING_COUNT_WINDOW) | (1 << GnosisEPLParser.SLIDING_TIME_WINDOW) | (1 << GnosisEPLParser.SLIDING_COUNT_WINDOW))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2179,33 +2360,33 @@ class GnosisEPLParser ( Parser ):
     def window_size(self):
 
         localctx = GnosisEPLParser.Window_sizeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 56, self.RULE_window_size)
+        self.enterRule(localctx, 62, self.RULE_window_size)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 276
+            self.state = 297
             self.window_length()
-            self.state = 283
+            self.state = 304
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==GnosisEPLParser.COMMA:
-                self.state = 280
+                self.state = 301
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,23,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
                 if la_ == 1:
-                    self.state = 277
+                    self.state = 298
                     self.match(GnosisEPLParser.COMMA)
                     pass
 
                 elif la_ == 2:
-                    self.state = 278
+                    self.state = 299
                     self.match(GnosisEPLParser.COMMA)
-                    self.state = 279
+                    self.state = 300
                     self.match(GnosisEPLParser.WHITESPACE)
                     pass
 
 
-                self.state = 282
+                self.state = 303
                 self.sliding_length()
 
 
@@ -2244,10 +2425,10 @@ class GnosisEPLParser ( Parser ):
     def window_length(self):
 
         localctx = GnosisEPLParser.Window_lengthContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 58, self.RULE_window_length)
+        self.enterRule(localctx, 64, self.RULE_window_length)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 285
+            self.state = 306
             self.match(GnosisEPLParser.NUMBER)
         except RecognitionException as re:
             localctx.exception = re
@@ -2284,10 +2465,10 @@ class GnosisEPLParser ( Parser ):
     def sliding_length(self):
 
         localctx = GnosisEPLParser.Sliding_lengthContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 60, self.RULE_sliding_length)
+        self.enterRule(localctx, 66, self.RULE_sliding_length)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 287
+            self.state = 308
             self.match(GnosisEPLParser.NUMBER)
         except RecognitionException as re:
             localctx.exception = re
@@ -2340,35 +2521,35 @@ class GnosisEPLParser ( Parser ):
     def metric_list(self):
 
         localctx = GnosisEPLParser.Metric_listContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 62, self.RULE_metric_list)
+        self.enterRule(localctx, 68, self.RULE_metric_list)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 289
+            self.state = 310
             self.metric()
-            self.state = 298
+            self.state = 319
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==GnosisEPLParser.COMMA:
-                self.state = 293
+                self.state = 314
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
                 if la_ == 1:
-                    self.state = 290
+                    self.state = 311
                     self.match(GnosisEPLParser.COMMA)
                     pass
 
                 elif la_ == 2:
-                    self.state = 291
+                    self.state = 312
                     self.match(GnosisEPLParser.COMMA)
-                    self.state = 292
+                    self.state = 313
                     self.match(GnosisEPLParser.WHITESPACE)
                     pass
 
 
-                self.state = 295
+                self.state = 316
                 self.metric()
-                self.state = 300
+                self.state = 321
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -2422,18 +2603,18 @@ class GnosisEPLParser ( Parser ):
     def metric(self):
 
         localctx = GnosisEPLParser.MetricContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 64, self.RULE_metric)
+        self.enterRule(localctx, 70, self.RULE_metric)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 301
+            self.state = 322
             self.metric_name()
-            self.state = 302
+            self.state = 323
             self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 303
+            self.state = 324
             self.comparison_operator()
-            self.state = 304
+            self.state = 325
             self.match(GnosisEPLParser.WHITESPACE)
-            self.state = 305
+            self.state = 326
             self.metric_value()
         except RecognitionException as re:
             localctx.exception = re
@@ -2470,10 +2651,10 @@ class GnosisEPLParser ( Parser ):
     def metric_name(self):
 
         localctx = GnosisEPLParser.Metric_nameContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 66, self.RULE_metric_name)
+        self.enterRule(localctx, 72, self.RULE_metric_name)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 307
+            self.state = 328
             self.match(GnosisEPLParser.CONFIDENCE)
         except RecognitionException as re:
             localctx.exception = re
@@ -2510,10 +2691,10 @@ class GnosisEPLParser ( Parser ):
     def metric_value(self):
 
         localctx = GnosisEPLParser.Metric_valueContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 68, self.RULE_metric_value)
+        self.enterRule(localctx, 74, self.RULE_metric_value)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 309
+            self.state = 330
             self.match(GnosisEPLParser.NUMBER)
         except RecognitionException as re:
             localctx.exception = re
@@ -2566,35 +2747,35 @@ class GnosisEPLParser ( Parser ):
     def node_list(self):
 
         localctx = GnosisEPLParser.Node_listContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 70, self.RULE_node_list)
+        self.enterRule(localctx, 76, self.RULE_node_list)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 311
+            self.state = 332
             self.node()
-            self.state = 320
+            self.state = 341
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==GnosisEPLParser.COMMA:
-                self.state = 315
+                self.state = 336
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,29,self._ctx)
                 if la_ == 1:
-                    self.state = 312
+                    self.state = 333
                     self.match(GnosisEPLParser.COMMA)
                     pass
 
                 elif la_ == 2:
-                    self.state = 313
+                    self.state = 334
                     self.match(GnosisEPLParser.COMMA)
-                    self.state = 314
+                    self.state = 335
                     self.match(GnosisEPLParser.WHITESPACE)
                     pass
 
 
-                self.state = 317
+                self.state = 338
                 self.node()
-                self.state = 322
+                self.state = 343
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -2613,8 +2794,18 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self):
-            return self.getToken(GnosisEPLParser.WORD, 0)
+        def alphanumeric(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(GnosisEPLParser.AlphanumericContext)
+            else:
+                return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,i)
+
+
+        def ASTERISK(self, i:int=None):
+            if i is None:
+                return self.getTokens(GnosisEPLParser.ASTERISK)
+            else:
+                return self.getToken(GnosisEPLParser.ASTERISK, i)
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_node
@@ -2633,11 +2824,34 @@ class GnosisEPLParser ( Parser ):
     def node(self):
 
         localctx = GnosisEPLParser.NodeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 72, self.RULE_node)
+        self.enterRule(localctx, 78, self.RULE_node)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 323
-            self.match(GnosisEPLParser.WORD)
+            self.state = 346 
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while True:
+                self.state = 346
+                self._errHandler.sync(self)
+                token = self._input.LA(1)
+                if token in [GnosisEPLParser.NUMBER, GnosisEPLParser.WORD]:
+                    self.state = 344
+                    self.alphanumeric()
+                    pass
+                elif token in [GnosisEPLParser.ASTERISK]:
+                    self.state = 345
+                    self.match(GnosisEPLParser.ASTERISK)
+                    pass
+                else:
+                    raise NoViableAltException(self)
+
+                self.state = 348 
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << GnosisEPLParser.ASTERISK) | (1 << GnosisEPLParser.NUMBER) | (1 << GnosisEPLParser.WORD))) != 0)):
+                    break
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
