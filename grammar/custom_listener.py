@@ -33,7 +33,8 @@ class CustomEPLListener(GnosisEPLListener):
         print(ctx.getText())
 
     def enterRelationship(self, ctx):
-        print(ctx.getText())
+        if ctx.left_rel_direction() is not None:
+            print(ctx.right_rel_direction().getText())
 
     def enterNode(self, ctx):
         print(ctx.getText())

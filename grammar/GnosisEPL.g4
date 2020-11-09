@@ -92,8 +92,6 @@ WHITESPACE          : (' ' | '\t') ;
 
 NEWLINE             : ('\r'? '\n' | '\r')+ ;
 
-REL_DIRECTION       : (LTH '-' | '-' | '-' GTH) ;
-
 EVERYTHING          : '?(.*)' ;
 
 /*
@@ -130,8 +128,8 @@ match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
 relationship : left_object (left_rel_direction LBRACK operator_type COLON query_operator RBRACK right_rel_direction right_object)?;
 
 left_object : object_ref_with_class ;
-left_rel_direction: REL_DIRECTION ;
-right_rel_direction: REL_DIRECTION ;
+left_rel_direction: ('<-' | '-' | '->') ;
+right_rel_direction: ('<-' | '-' | '->') ;
 right_object : object_ref_with_class ;
 object_ref_with_class  : LPAREN object_ref COLON object_class (WHITESPACE* attributes)? RPAREN ;
 object_class : WORD ;
