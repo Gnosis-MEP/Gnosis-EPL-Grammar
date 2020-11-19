@@ -36,5 +36,4 @@ if __name__ == '__main__':
          "WHERE c.color='blue' "
          "FROM pub01.mp4 "
          "WITHIN TUMBLING_TIME_WINDOW(30) "
-         #"WITH_QoS CONFIDENCE > 70 "
          "RETURN *")
