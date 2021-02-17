@@ -1,6 +1,8 @@
 # Gnosis EPL Grammar
 
 ## Installing Dependencies
+### Java
+If you need to re-generate the automatic grammar files created from ANTLR4, then you'll need Java installed (tested with version 11.0.7 OpenJDK). Otherwise, you can ignore this dependency.
 
 ### Using pipenv
 Run `$ pipenv shell` to create a python virtualenv and load the .env into the environment variables in the shell.
@@ -15,5 +17,9 @@ To install from the `requirements.txt` file, run the following command:
 $ pip install -r requirements.txt
 ```
 
-## Build
-Build the antlr4 grammar using: `antlr4 -Dlanguage=Python3 GnosisEPL.g4`
+## Rebuilding Grammar (ANTRL-4)
+execute:
+```
+$ ./gen_antrl_files.sh
+```
+This will recreate the .py files and copy(override) the ones in the grammar module with this newly created ones.

@@ -1,9 +1,9 @@
 from antlr4 import *
 
-from grammar.GnosisEPLLexer import GnosisEPLLexer
-from grammar.GnosisEPLParser import GnosisEPLParser
-from grammar.custom_listener import CustomEPLListener
-from grammar.error_handler import GnosisErrorListener
+from GnosisEPLLexer import GnosisEPLLexer
+from GnosisEPLParser import GnosisEPLParser
+from custom_listener import CustomEPLListener
+from error_handler import GnosisErrorListener
 
 
 def main(subscription):

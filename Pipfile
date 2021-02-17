@@ -4,6 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+ipdb = "*"
+bumpversion = "*"
+flake8 = "*"
 
 [packages]
 antlr4-python3-runtime = "==4.8"

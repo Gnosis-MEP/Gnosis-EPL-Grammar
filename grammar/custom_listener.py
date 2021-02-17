@@ -1,4 +1,4 @@
-from grammar.GnosisEPLListener import GnosisEPLListener
+from GnosisEPLListener import GnosisEPLListener
 
 class CustomEPLListener(GnosisEPLListener):
 
@@ -37,4 +37,5 @@ class CustomEPLListener(GnosisEPLListener):
             print(ctx.right_rel_direction().getText())
 
     def enterNode(self, ctx):
+        import ipdb; ipdb.set_trace()
         print(ctx.getText())

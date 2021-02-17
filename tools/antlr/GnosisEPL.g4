@@ -109,7 +109,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                (WHERE WHITESPACE where_clause)?
                FROM WHITESPACE publisher separator
                WITHIN WHITESPACE window separator
-               WITH_QoS WHITESPACE metric_list separator?
+               (WITH_QoS WHITESPACE metric_list separator)?
                RETURN WHITESPACE node_list;
 
 query_name  : WORD ;
