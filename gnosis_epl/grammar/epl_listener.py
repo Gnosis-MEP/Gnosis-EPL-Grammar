@@ -28,5 +28,9 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterQuery_name(self, ctx):
         self.query['name'] = ctx.getText()
 
+    def enterPublisher_list(self, ctx):
+        self.query['from'] = [p.getText() for p in ctx.publisher()]
+
+
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)

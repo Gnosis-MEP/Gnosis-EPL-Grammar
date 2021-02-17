@@ -16,7 +16,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
             MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
-            FROM teste
+            FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
         query_dict = self.parser.parse(query_text)
@@ -28,9 +28,45 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
             MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
-            FROM teste
+            FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
 
         with self.assertRaises(GnosisEPLParserException):
             query_dict = self.parser.parse(query_text)
+
+    def test_from_is_correctly_parsed_when_single_value(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM test
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('from', query_dict)
+        self.assertEqual(query_dict['from'], ['test'])
+
+    def test_from_is_correctly_parsed_when_multi_value(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM test, test2
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('from', query_dict)
+        self.assertEqual(query_dict['from'], ['test', 'test2'])
+
+    def test_from_is_correctly_parsed_when_asterisk_value(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('from', query_dict)
+        self.assertEqual(query_dict['from'], ['*'])
