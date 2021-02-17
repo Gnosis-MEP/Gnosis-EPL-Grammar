@@ -260,6 +260,15 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#publisher_list.
+    def enterPublisher_list(self, ctx:GnosisEPLParser.Publisher_listContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#publisher_list.
+    def exitPublisher_list(self, ctx:GnosisEPLParser.Publisher_listContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#publisher.
     def enterPublisher(self, ctx:GnosisEPLParser.PublisherContext):
         pass

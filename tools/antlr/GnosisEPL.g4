@@ -107,7 +107,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                CONTENT WHITESPACE content separator
                MATCH WHITESPACE match_clause separator
                (WHERE WHITESPACE where_clause)?
-               FROM WHITESPACE publisher separator
+               FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
                (WITH_QoS WHITESPACE metric_list separator)?
                RETURN WHITESPACE node_list;
@@ -145,7 +145,8 @@ logical_operator    : (AND | OR) ;
 
 where_clause : ( ~FROM* | '\'' | '"') ;
 
-publisher : (alphanumeric | '.mp4')+ ;
+publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
+publisher : (alphanumeric | ASTERISK)+ ;
 
 window : window_type LPAREN window_size RPAREN ;
 window_type : (TUMLBING_TIME_WINDOW | TUMLBING_COUNT_WINDOW | SLIDING_TIME_WINDOW | SLIDING_COUNT_WINDOW) ;
@@ -155,8 +156,8 @@ sliding_length : NUMBER ;
 
 metric_list : metric ((COMMA | (COMMA WHITESPACE)) metric)* ;
 metric : metric_name WHITESPACE comparison_operator WHITESPACE metric_value ;
-metric_name : CONFIDENCE ;
-metric_value : NUMBER ;
+metric_name : WORD ;
+metric_value : alphanumeric ;
 
 node_list : node ((COMMA | (COMMA WHITESPACE)) node)* ;
 node : (alphanumeric | ASTERISK)+;
