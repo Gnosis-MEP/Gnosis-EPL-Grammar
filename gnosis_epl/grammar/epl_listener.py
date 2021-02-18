@@ -28,9 +28,11 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterQuery_name(self, ctx):
         self.query['name'] = ctx.getText()
 
+    def enterContent(self, ctx):
+        self.query['content'] = [c.getText() for c in ctx.content_service()]
+
     def enterPublisher_list(self, ctx):
         self.query['from'] = [p.getText() for p in ctx.publisher()]
-
 
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)

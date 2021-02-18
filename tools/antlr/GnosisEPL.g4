@@ -104,7 +104,7 @@ query : subcription + EOF ;
 
 subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                OUTPUT WHITESPACE output_type separator
-               CONTENT WHITESPACE content separator
+               (CONTENT WHITESPACE content separator)?
                MATCH WHITESPACE match_clause separator
                (WHERE WHITESPACE where_clause)?
                FROM WHITESPACE publisher_list separator
@@ -120,7 +120,7 @@ output : WORD ;
 separator : (NEWLINE | WHITESPACE)+ ;
 
 content : (content_service | COMMA | WHITESPACE)+ ;
-content_service : (WORD | '-')+ ;
+content_service : WORD ;
 
 match_clause : relationship (WHITESPACE match_type WHITESPACE relationship)* ;
 match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
