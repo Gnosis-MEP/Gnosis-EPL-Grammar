@@ -296,30 +296,21 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#window_size.
-    def enterWindow_size(self, ctx:GnosisEPLParser.Window_sizeContext):
+    # Enter a parse tree produced by GnosisEPLParser#window_arg_list.
+    def enterWindow_arg_list(self, ctx:GnosisEPLParser.Window_arg_listContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#window_size.
-    def exitWindow_size(self, ctx:GnosisEPLParser.Window_sizeContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#window_length.
-    def enterWindow_length(self, ctx:GnosisEPLParser.Window_lengthContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#window_length.
-    def exitWindow_length(self, ctx:GnosisEPLParser.Window_lengthContext):
+    # Exit a parse tree produced by GnosisEPLParser#window_arg_list.
+    def exitWindow_arg_list(self, ctx:GnosisEPLParser.Window_arg_listContext):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#sliding_length.
-    def enterSliding_length(self, ctx:GnosisEPLParser.Sliding_lengthContext):
+    # Enter a parse tree produced by GnosisEPLParser#window_arg.
+    def enterWindow_arg(self, ctx:GnosisEPLParser.Window_argContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#sliding_length.
-    def exitSliding_length(self, ctx:GnosisEPLParser.Sliding_lengthContext):
+    # Exit a parse tree produced by GnosisEPLParser#window_arg.
+    def exitWindow_arg(self, ctx:GnosisEPLParser.Window_argContext):
         pass
 
 

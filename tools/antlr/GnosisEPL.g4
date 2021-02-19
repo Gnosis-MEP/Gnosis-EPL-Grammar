@@ -75,11 +75,7 @@ OR : O R ;
 FROM                : F R O M;
 WHERE               : W H E R E;
 WITHIN : W I T H I N ;
-TUMLBING_TIME_WINDOW    : T U M B L I N G UNDERSCORE T I M E UNDERSCORE W I N D O W ;
-TUMLBING_COUNT_WINDOW    : T U M B L I N G UNDERSCORE C O U N T UNDERSCORE W I N D O W ;
-SLIDING_TIME_WINDOW    : S L I D I N G UNDERSCORE T I M E UNDERSCORE W I N D O W ;
-SLIDING_COUNT_WINDOW    : S L I D I N G UNDERSCORE C O U N T UNDERSCORE W I N D O W ;
-WITH_QoS : W I T H UNDERSCORE Q O S ;
+WITH_QOS : W I T H UNDERSCORE Q O S ;
 RETURN : R E T U R N ;
 OPTIONAL : O P T I O N A L ;
 
@@ -109,7 +105,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                (WHERE WHITESPACE where_clause)?
                FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
-               (WITH_QoS WHITESPACE metric_list separator)?
+               (WITH_QOS WHITESPACE metric_list separator)?
                RETURN WHITESPACE node_list;
 
 query_name  : WORD ;
@@ -148,11 +144,10 @@ where_clause : ( ~FROM* | '\'' | '"') ;
 publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
 publisher : (alphanumeric | ASTERISK)+ ;
 
-window : window_type LPAREN window_size RPAREN ;
-window_type : (TUMLBING_TIME_WINDOW | TUMLBING_COUNT_WINDOW | SLIDING_TIME_WINDOW | SLIDING_COUNT_WINDOW) ;
-window_size : window_length ((COMMA | (COMMA WHITESPACE)) sliding_length)?;
-window_length : NUMBER ;
-sliding_length : NUMBER ;
+window : window_type LPAREN window_arg_list RPAREN ;
+window_type : WORD ;
+window_arg_list : window_arg ((COMMA | (COMMA WHITESPACE)) window_arg)* ;
+window_arg : alphanumeric ;
 
 metric_list : metric ((COMMA | (COMMA WHITESPACE)) metric)* ;
 metric : metric_name WHITESPACE comparison_operator WHITESPACE metric_value ;

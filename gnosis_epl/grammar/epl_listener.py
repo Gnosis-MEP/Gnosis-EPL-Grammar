@@ -25,6 +25,10 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def __init__(self):
         self.query = {}
 
+    def enterWindow(self, ctx):
+        # import ipdb; ipdb.set_trace()
+        pass
+
     def enterQuery_name(self, ctx):
         self.query['name'] = ctx.getText()
 
