@@ -104,3 +104,51 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             RETURN *"""
         query_dict = self.parser.parse(query_text)
         self.assertNotIn('content', query_dict)
+
+    def test_window_is_correctly_parsed_with_single_arg(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_dict = {
+            'window_type': 'TUMBLING_COUNT_WINDOW',
+            'args': [2]
+        }
+        self.assertIn('window', query_dict)
+        self.assertEqual(query_dict['window'], excepted_dict)
+
+    def test_window_is_correctly_parsed_with_multiple_arg(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(2, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_dict = {
+            'window_type': 'TUMBLING_COUNT_WINDOW',
+            'args': [2, 1]
+        }
+        self.assertIn('window', query_dict)
+        self.assertEqual(query_dict['window'], excepted_dict)
+
+    def test_window_is_correctly_parsed_with_mixed_type_arg(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_dict = {
+            'window_type': 'TUMBLING_COUNT_WINDOW',
+            'args': ['a1b2c', 1]
+        }
+        self.assertIn('window', query_dict)
+        self.assertEqual(query_dict['window'], excepted_dict)

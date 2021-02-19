@@ -25,9 +25,19 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def __init__(self):
         self.query = {}
 
+    def int_or_str_cast(self, value):
+        try:
+            return int(value)
+        except ValueError:
+            return value
+
     def enterWindow(self, ctx):
-        # import ipdb; ipdb.set_trace()
-        pass
+        args = [self.int_or_str_cast(arg.getText()) for arg in ctx.window_arg_list().window_arg()]
+        window = {
+            'window_type': ctx.window_type().getText(),
+            'args': args
+       }
+        self.query['window'] = window
 
     def enterQuery_name(self, ctx):
         self.query['name'] = ctx.getText()
