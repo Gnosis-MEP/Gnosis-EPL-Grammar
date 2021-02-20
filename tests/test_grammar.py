@@ -486,3 +486,78 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         excepted_str = 'MATCH (c:Car)--(p:Person)'
         self.assertIn('match', query_dict)
         self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_ret_simple(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN c"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN c'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_ret_simple_attr(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN c.color"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN c.color'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_ret_mult_attr(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN c.color, p"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN c.color, p'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_ret_mult_attr2(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN c.color, p.name"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN c.color, p.name'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_ret_asterisk(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN *"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN *'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)

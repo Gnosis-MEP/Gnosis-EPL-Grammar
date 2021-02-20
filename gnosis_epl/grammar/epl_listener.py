@@ -60,5 +60,8 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterWhere_clause(self, ctx):
         self.query['where'] = f'WHERE {ctx.getText()}'
 
+    def enterNode_list(self, ctx):
+        self.query['ret'] = f'RETURN {ctx.getText()}'
+
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)

@@ -160,7 +160,7 @@ metric_name : WORD ;
 metric_value : alphanumeric ;
 
 node_list : node ((COMMA | (COMMA WHITESPACE)) node)* ;
-node : (alphanumeric | ASTERISK)+;
+node : (alphanumeric (DOT alphanumeric)? | ASTERISK)+;
 
 
 
