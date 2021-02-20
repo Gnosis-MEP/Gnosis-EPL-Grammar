@@ -57,5 +57,8 @@ class ToDictionaryEPLListener(GnosisEPLListener):
             key = 'optional_match'
         self.query[key] = match
 
+    def enterWhere_clause(self, ctx):
+        self.query['where'] = f'WHERE {ctx.getText()}'
+
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)

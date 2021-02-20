@@ -351,3 +351,48 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         self.assertEqual(query_dict['match'], excepted_str)
         self.assertIn('optional_match', query_dict)
         self.assertEqual(query_dict['optional_match'], excepted_optional_str)
+
+    def test_entire_where_single(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE c.color="blue"
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE c.color="blue"'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_multiple_with_and(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE c.color="blue" AND p.age=23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE c.color="blue" AND p.age=23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_multiple_with_or(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE c.color="blue" OR p.age=23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE c.color="blue" OR p.age=23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)

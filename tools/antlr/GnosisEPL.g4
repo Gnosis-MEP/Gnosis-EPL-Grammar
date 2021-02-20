@@ -101,7 +101,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                (CONTENT WHITESPACE content separator)?
                MATCH WHITESPACE match_clause separator
                (OPTIONAL WHITESPACE MATCH WHITESPACE match_clause separator)?
-               (WHERE WHITESPACE where_clause)?
+               (WHERE WHITESPACE where_clause separator)?
                FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
                (WITH_QOS WHITESPACE metric_list separator)?
@@ -118,13 +118,12 @@ content : (content_service | COMMA | WHITESPACE)+ ;
 content_service : WORD ;
 
 match_clause : relationship (((WHITESPACE* COMMA) | (COMMA WHITESPACE*) | (WHITESPACE* COMMA WHITESPACE*)) relationship)* ;
-//match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
-//relationship_set : relationship ;
 
 relationship : left_object (relationship_ref_with_class relationship)? ;
 relationship_ref_with_class : ('-' relationship_ref_middle? '->' | '-' relationship_ref_middle? '-' | '<-' relationship_ref_middle? '-') ;
 relationship_ref_middle : (LBRACK (object_ref)? COLON relationship_type (WHITESPACE* attributes)? RBRACK) ;
 relationship_type : alphanumeric ;
+
 
 left_object : object_ref_with_class ;
 right_object : object_ref_with_class ;
@@ -133,7 +132,7 @@ object_class : WORD ;
 object_ref : alphanumeric ;
 
 attributes : LCURLY WHITESPACE* attribute ((COMMA | (COMMA WHITESPACE*)) attribute)* WHITESPACE* RCURLY ;
-attribute : attribute_name COLON attribute_value;
+attribute : attribute_name COLON attribute_value ;
 attribute_name : WORD ;
 attribute_value : (attribute_value_str | attribute_value_num) ;
 attribute_value_str : ('\'' | '"') (alphanumeric | WHITESPACE)* ('\'' | '"') ;
@@ -141,7 +140,8 @@ attribute_value_num :  NUMBER+ ;
 
 logical_operator    : (AND | OR) ;
 
-where_clause : ( ~FROM* | '\'' | '"') ;
+where_clause : where_attribute (WHITESPACE* logical_operator WHITESPACE* where_attribute)*;
+where_attribute : attribute_name DOT attribute_name EQUAL attribute_value ;
 
 publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
 publisher : (alphanumeric | ASTERISK)+ ;
