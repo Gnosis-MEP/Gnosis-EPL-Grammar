@@ -471,3 +471,19 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         excepted_str = 'WHERE p.age <> 23'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_simple_query(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN *"
+        )
+        import ipdb; ipdb.set_trace()
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)--(p:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
