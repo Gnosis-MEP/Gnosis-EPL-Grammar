@@ -144,7 +144,7 @@ attribute_value_num :  NUMBER+ ;
 logical_operator    : (AND | OR) ;
 
 where_clause : where_attribute (WHITESPACE* logical_operator WHITESPACE* where_attribute)* ;
-where_attribute : attribute_name DOT attribute_name WHITESPACE comparison_operator WHITESPACE attribute_value ;
+where_attribute : attribute_name DOT attribute_name WHITESPACE comparison_operator WHITESPACE (attribute_value | attribute_name DOT attribute_name) ;
 
 publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
 publisher : (alphanumeric | ASTERISK)+ ;

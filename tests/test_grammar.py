@@ -472,6 +472,21 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
 
+    def test_entire_where_compare_nodes(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age <> ct.age
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age <> ct.age'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
     def test_simple_query(self):
         query_text = (
             "REGISTER QUERY my_first_query "
