@@ -100,6 +100,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                OUTPUT WHITESPACE output_type separator
                (CONTENT WHITESPACE content separator)?
                MATCH WHITESPACE match_clause separator
+               (OPTIONAL WHITESPACE MATCH WHITESPACE match_clause separator)?
                (WHERE WHITESPACE where_clause)?
                FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
@@ -127,7 +128,7 @@ relationship_type : alphanumeric ;
 
 left_object : object_ref_with_class ;
 right_object : object_ref_with_class ;
-object_ref_with_class  : LPAREN (object_ref)? COLON object_class (WHITESPACE* attributes)? RPAREN ;
+object_ref_with_class  : LPAREN (object_ref)? (COLON object_class)? (WHITESPACE* attributes)? RPAREN ;
 object_class : WORD ;
 object_ref : alphanumeric ;
 

@@ -334,3 +334,20 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         excepted_str = 'MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)'
         self.assertIn('match', query_dict)
         self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_optional_match_with_is_correctly_parsed_when_multiple_relation_attrs_label_directed(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)'
+        excepted_optional_str = 'OPTIONAL MATCH (c)-->(x)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+        self.assertIn('optional_match', query_dict)
+        self.assertEqual(query_dict['optional_match'], excepted_optional_str)

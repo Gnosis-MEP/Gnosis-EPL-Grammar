@@ -36,7 +36,7 @@ class ToDictionaryEPLListener(GnosisEPLListener):
         window = {
             'window_type': ctx.window_type().getText(),
             'args': args
-       }
+        }
         self.query['window'] = window
 
     def enterQuery_name(self, ctx):
@@ -49,8 +49,13 @@ class ToDictionaryEPLListener(GnosisEPLListener):
         self.query['from'] = [p.getText() for p in ctx.publisher()]
 
     def enterMatch_clause(self, ctx):
-        # import ipdb; ipdb.set_trace()
-        self.query['match'] = f'MATCH {ctx.getText()}'
+        match = f'MATCH {ctx.getText()}'
+        is_optional = 'match' in self.query.keys()
+        key = 'match'
+        if is_optional:
+            match = f'OPTIONAL {match}'
+            key = 'optional_match'
+        self.query[key] = match
 
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)
