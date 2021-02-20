@@ -358,12 +358,12 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             CONTENT ObjectDetection, ColorDetection
             MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
             OPTIONAL MATCH (c)-->(x)
-            WHERE c.color="blue"
+            WHERE c.color = "blue"
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
             RETURN *"""
         query_dict = self.parser.parse(query_text)
-        excepted_str = 'WHERE c.color="blue"'
+        excepted_str = 'WHERE c.color = "blue"'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
 
@@ -373,12 +373,12 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             CONTENT ObjectDetection, ColorDetection
             MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
             OPTIONAL MATCH (c)-->(x)
-            WHERE c.color="blue" AND p.age=23
+            WHERE c.color = "blue" AND p.age = 23
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
             RETURN *"""
         query_dict = self.parser.parse(query_text)
-        excepted_str = 'WHERE c.color="blue" AND p.age=23'
+        excepted_str = 'WHERE c.color = "blue" AND p.age = 23'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
 
@@ -388,11 +388,86 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             CONTENT ObjectDetection, ColorDetection
             MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
             OPTIONAL MATCH (c)-->(x)
-            WHERE c.color="blue" OR p.age=23
+            WHERE c.color = "blue" OR p.age = 23
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
             RETURN *"""
         query_dict = self.parser.parse(query_text)
-        excepted_str = 'WHERE c.color="blue" OR p.age=23'
+        excepted_str = 'WHERE c.color = "blue" OR p.age = 23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_single_lesser_than(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age < 23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age < 23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_single_lesser_than_eq(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age <= 23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age <= 23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_single_greater_than(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age > 23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age > 23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_single_greater_than_eq(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age >= 23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age >= 23'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_entire_where_single_diff(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            OPTIONAL MATCH (c)-->(x)
+            WHERE p.age <> 23
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.age <> 23'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)

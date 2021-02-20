@@ -49,10 +49,13 @@ NEGATION: '~' ;
 VERTBAR	: '|' ;
 BITAND	: '&' ;
 POWER_OP: '^' ;
-GTH	: '>' ;
-LTH	: '<' ;
-UNDERSCORE : '_' ;
+GTH : '>' ;
+GTHE	: '>=' ;
+LTH : '<' ;
+LTHE : '<=' ;
 EQUAL : '=' ;
+DIFFERENT : '<>' ;
+UNDERSCORE : '_' ;
 
 fragment LOWERCASE  : [a-z] ;
 fragment UPPERCASE  : [A-Z] ;
@@ -92,7 +95,7 @@ EVERYTHING          : '?(.*)' ;
  */
 alphanumeric : ( WORD | NUMBER )+ ;
 
-comparison_operator : (EQUAL | GTH | LTH) ;
+comparison_operator : (EQUAL | DIFFERENT | GTH | GTHE | LTH | LTHE ) ;
 
 query : subcription + EOF ;
 
@@ -140,8 +143,8 @@ attribute_value_num :  NUMBER+ ;
 
 logical_operator    : (AND | OR) ;
 
-where_clause : where_attribute (WHITESPACE* logical_operator WHITESPACE* where_attribute)*;
-where_attribute : attribute_name DOT attribute_name EQUAL attribute_value ;
+where_clause : where_attribute (WHITESPACE* logical_operator WHITESPACE* where_attribute)* ;
+where_attribute : attribute_name DOT attribute_name WHITESPACE comparison_operator WHITESPACE attribute_value ;
 
 publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
 publisher : (alphanumeric | ASTERISK)+ ;
