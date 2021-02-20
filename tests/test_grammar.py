@@ -15,7 +15,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -27,7 +27,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY Invalid Query Name
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -39,7 +39,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -51,7 +51,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM test, test2
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -63,7 +63,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -75,7 +75,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -87,7 +87,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -98,7 +98,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
     def test_content_is_correctly_parsed_when_not_present(self):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -109,7 +109,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2)
             RETURN *"""
@@ -125,7 +125,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(2, 1)
             RETURN *"""
@@ -141,7 +141,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c1:Car {color:'blue'}) AND (c2:Car {color:'white'})
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
             RETURN *"""
@@ -152,3 +152,185 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         }
         self.assertIn('window', query_dict)
         self.assertEqual(query_dict['window'], excepted_dict)
+
+    def test_entire_match_with_is_correctly_parsed_when_obj_not_defined(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_obj_is_defined(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_non_related_matches(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car), (:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car), (:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_left_relation(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)-->(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)-->(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_right_relation(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)<--(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)<--(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_gen_relation(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)--(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)--(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)-[:something]-(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)-[:something]-(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed_label(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)-[r:something]-(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)-[r:something]-(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed_attrs(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (:Car)-[:something {something:123, abc:"test"}]-(:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (:Car)-[:something {something:123, abc:"test"}]-(:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed_attrs_label_node(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-[:something {something:123, abc:"test"}]-(p:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)-[:something {something:123, abc:"test"}]-(p:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed_attrs_label_node_directed_right(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-[:something {something:123, abc:"test"}]->(p:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)-[:something {something:123, abc:"test"}]->(p:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_single_relation_detailed_attrs_label_node_directed_left(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)<-[:something {something:123, abc:"test"}]-(p:Person)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)<-[:something {something:123, abc:"test"}]-(p:Person)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_multiple_relation_gen(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)--(p:Person)--(ct:Cat)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)--(p:Person)--(ct:Cat)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)
+
+    def test_entire_match_with_is_correctly_parsed_when_multiple_relation_attrs_label_directed(self):
+        query_text = """REGISTER QUERY my_first_query
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)
+            FROM *
+            WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)'
+        self.assertIn('match', query_dict)
+        self.assertEqual(query_dict['match'], excepted_str)

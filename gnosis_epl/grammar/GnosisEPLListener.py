@@ -107,15 +107,6 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#match_type.
-    def enterMatch_type(self, ctx:GnosisEPLParser.Match_typeContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#match_type.
-    def exitMatch_type(self, ctx:GnosisEPLParser.Match_typeContext):
-        pass
-
-
     # Enter a parse tree produced by GnosisEPLParser#relationship.
     def enterRelationship(self, ctx:GnosisEPLParser.RelationshipContext):
         pass
@@ -125,30 +116,39 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#relationship_ref_with_class.
+    def enterRelationship_ref_with_class(self, ctx:GnosisEPLParser.Relationship_ref_with_classContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#relationship_ref_with_class.
+    def exitRelationship_ref_with_class(self, ctx:GnosisEPLParser.Relationship_ref_with_classContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#relationship_ref_middle.
+    def enterRelationship_ref_middle(self, ctx:GnosisEPLParser.Relationship_ref_middleContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#relationship_ref_middle.
+    def exitRelationship_ref_middle(self, ctx:GnosisEPLParser.Relationship_ref_middleContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#relationship_type.
+    def enterRelationship_type(self, ctx:GnosisEPLParser.Relationship_typeContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#relationship_type.
+    def exitRelationship_type(self, ctx:GnosisEPLParser.Relationship_typeContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#left_object.
     def enterLeft_object(self, ctx:GnosisEPLParser.Left_objectContext):
         pass
 
     # Exit a parse tree produced by GnosisEPLParser#left_object.
     def exitLeft_object(self, ctx:GnosisEPLParser.Left_objectContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#left_rel_direction.
-    def enterLeft_rel_direction(self, ctx:GnosisEPLParser.Left_rel_directionContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#left_rel_direction.
-    def exitLeft_rel_direction(self, ctx:GnosisEPLParser.Left_rel_directionContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#right_rel_direction.
-    def enterRight_rel_direction(self, ctx:GnosisEPLParser.Right_rel_directionContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#right_rel_direction.
-    def exitRight_rel_direction(self, ctx:GnosisEPLParser.Right_rel_directionContext):
         pass
 
 
@@ -224,21 +224,21 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#operator_type.
-    def enterOperator_type(self, ctx:GnosisEPLParser.Operator_typeContext):
+    # Enter a parse tree produced by GnosisEPLParser#attribute_value_str.
+    def enterAttribute_value_str(self, ctx:GnosisEPLParser.Attribute_value_strContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#operator_type.
-    def exitOperator_type(self, ctx:GnosisEPLParser.Operator_typeContext):
+    # Exit a parse tree produced by GnosisEPLParser#attribute_value_str.
+    def exitAttribute_value_str(self, ctx:GnosisEPLParser.Attribute_value_strContext):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#query_operator.
-    def enterQuery_operator(self, ctx:GnosisEPLParser.Query_operatorContext):
+    # Enter a parse tree produced by GnosisEPLParser#attribute_value_num.
+    def enterAttribute_value_num(self, ctx:GnosisEPLParser.Attribute_value_numContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#query_operator.
-    def exitQuery_operator(self, ctx:GnosisEPLParser.Query_operatorContext):
+    # Exit a parse tree produced by GnosisEPLParser#attribute_value_num.
+    def exitAttribute_value_num(self, ctx:GnosisEPLParser.Attribute_value_numContext):
         pass
 
 

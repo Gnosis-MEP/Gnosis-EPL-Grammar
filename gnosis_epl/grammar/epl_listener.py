@@ -48,5 +48,9 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterPublisher_list(self, ctx):
         self.query['from'] = [p.getText() for p in ctx.publisher()]
 
+    def enterMatch_clause(self, ctx):
+        # import ipdb; ipdb.set_trace()
+        self.query['match'] = f'MATCH {ctx.getText()}'
+
     def visitErrorNode(self, node):
         raise GnosisEPLParserException(node)

@@ -64,8 +64,6 @@ OUTPUT : O U T P U T ;
 CONTENT : C O N T E N T ;
 SELECT : S E L E C T ;
 MATCH : M A T C H ;
-SPATIAL : S P A T I A L ;
-TEMPORAL : T E M P O R A L ;
 LEFT : L E F T ;
 RIGHT : R I G H T ;
 BACK : B A C K ;
@@ -118,25 +116,28 @@ separator : (NEWLINE | WHITESPACE)+ ;
 content : (content_service | COMMA | WHITESPACE)+ ;
 content_service : WORD ;
 
-match_clause : relationship (WHITESPACE match_type WHITESPACE relationship)* ;
-match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
-relationship : left_object (left_rel_direction LBRACK operator_type COLON query_operator RBRACK right_rel_direction right_object)?;
+match_clause : relationship (((WHITESPACE* COMMA) | (COMMA WHITESPACE*) | (WHITESPACE* COMMA WHITESPACE*)) relationship)* ;
+//match_type : (MATCH | OPTIONAL WHITESPACE MATCH | logical_operator) ;
+//relationship_set : relationship ;
+
+relationship : left_object (relationship_ref_with_class relationship)? ;
+relationship_ref_with_class : ('-' relationship_ref_middle? '->' | '-' relationship_ref_middle? '-' | '<-' relationship_ref_middle? '-') ;
+relationship_ref_middle : (LBRACK (object_ref)? COLON relationship_type (WHITESPACE* attributes)? RBRACK) ;
+relationship_type : alphanumeric ;
 
 left_object : object_ref_with_class ;
-left_rel_direction: ('<-' | '-' | '->') ;
-right_rel_direction: ('<-' | '-' | '->') ;
 right_object : object_ref_with_class ;
-object_ref_with_class  : LPAREN object_ref COLON object_class (WHITESPACE* attributes)? RPAREN ;
+object_ref_with_class  : LPAREN (object_ref)? COLON object_class (WHITESPACE* attributes)? RPAREN ;
 object_class : WORD ;
 object_ref : alphanumeric ;
 
 attributes : LCURLY WHITESPACE* attribute ((COMMA | (COMMA WHITESPACE*)) attribute)* WHITESPACE* RCURLY ;
-attribute : attribute_name COLON ('\'' | '"') attribute_value ('\'' | '"');
+attribute : attribute_name COLON attribute_value;
 attribute_name : WORD ;
-attribute_value : (WORD | WHITESPACE)+ ;
+attribute_value : (attribute_value_str | attribute_value_num) ;
+attribute_value_str : ('\'' | '"') (alphanumeric | WHITESPACE)* ('\'' | '"') ;
+attribute_value_num :  NUMBER+ ;
 
-operator_type       : SPATIAL ;
-query_operator      : (LEFT | RIGHT | BACK | FRONT) ;
 logical_operator    : (AND | OR) ;
 
 where_clause : ( ~FROM* | '\'' | '"') ;
