@@ -131,12 +131,12 @@ relationship_type : alphanumeric ;
 left_object : object_ref_with_class ;
 right_object : object_ref_with_class ;
 object_ref_with_class  : LPAREN (object_ref)? (COLON object_class)? (WHITESPACE* attributes)? RPAREN ;
-object_class : WORD ;
+object_class : alphanumeric ;
 object_ref : alphanumeric ;
 
 attributes : LCURLY WHITESPACE* attribute ((COMMA | (COMMA WHITESPACE*)) attribute)* WHITESPACE* RCURLY ;
 attribute : attribute_name COLON attribute_value ;
-attribute_name : WORD ;
+attribute_name : alphanumeric ;
 attribute_value : (attribute_value_str | attribute_value_num) ;
 attribute_value_str : ('\'' | '"') (alphanumeric | WHITESPACE)* ('\'' | '"') ;
 attribute_value_num :  NUMBER+ ;

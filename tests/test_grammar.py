@@ -476,14 +476,14 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
             CONTENT ObjectDetection, ColorDetection
-            MATCH (c:Car)-->(p:Person)<-[r:Owns]-(ct:Cat)<--(p)
+            MATCH (c:Car)-->(p1:Person)<-[r:Owns]-(ct:Cat)<--(p)
             OPTIONAL MATCH (c)-->(x)
-            WHERE p.age <> ct.age
+            WHERE p1.age <> ct.age
             FROM *
             WITHIN TUMBLING_COUNT_WINDOW(a1b2c, 1)
             RETURN *"""
         query_dict = self.parser.parse(query_text)
-        excepted_str = 'WHERE p.age <> ct.age'
+        excepted_str = 'WHERE p1.age <> ct.age'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
 

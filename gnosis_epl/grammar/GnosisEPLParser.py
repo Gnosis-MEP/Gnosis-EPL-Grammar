@@ -151,7 +151,7 @@ def serializedATN():
         buf.write("\u0117\3\2\2\2\u0119\u011a\3\2\2\2\u011a\u011c\3\2\2\2")
         buf.write("\u011b\u0119\3\2\2\2\u011c\u011e\5*\26\2\u011d\u0119\3")
         buf.write("\2\2\2\u011d\u011e\3\2\2\2\u011e\u011f\3\2\2\2\u011f\u0120")
-        buf.write("\7\r\2\2\u0120%\3\2\2\2\u0121\u0122\7\62\2\2\u0122\'\3")
+        buf.write("\7\r\2\2\u0120%\3\2\2\2\u0121\u0122\5\2\2\2\u0122\'\3")
         buf.write("\2\2\2\u0123\u0124\5\2\2\2\u0124)\3\2\2\2\u0125\u0129")
         buf.write("\7\22\2\2\u0126\u0128\7\63\2\2\u0127\u0126\3\2\2\2\u0128")
         buf.write("\u012b\3\2\2\2\u0129\u0127\3\2\2\2\u0129\u012a\3\2\2\2")
@@ -168,7 +168,7 @@ def serializedATN():
         buf.write("\u0141\u0143\3\2\2\2\u0142\u0140\3\2\2\2\u0143\u0144\7")
         buf.write("\21\2\2\u0144+\3\2\2\2\u0145\u0146\5.\30\2\u0146\u0147")
         buf.write("\7\t\2\2\u0147\u0148\5\60\31\2\u0148-\3\2\2\2\u0149\u014a")
-        buf.write("\7\62\2\2\u014a/\3\2\2\2\u014b\u014e\5\62\32\2\u014c\u014e")
+        buf.write("\5\2\2\2\u014a/\3\2\2\2\u014b\u014e\5\62\32\2\u014c\u014e")
         buf.write("\5\64\33\2\u014d\u014b\3\2\2\2\u014d\u014c\3\2\2\2\u014e")
         buf.write("\61\3\2\2\2\u014f\u0154\t\5\2\2\u0150\u0153\5\2\2\2\u0151")
         buf.write("\u0153\7\63\2\2\u0152\u0150\3\2\2\2\u0152\u0151\3\2\2")
@@ -1771,8 +1771,9 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self):
-            return self.getToken(GnosisEPLParser.WORD, 0)
+        def alphanumeric(self):
+            return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,0)
+
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_object_class
@@ -1795,7 +1796,7 @@ class GnosisEPLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 287
-            self.match(GnosisEPLParser.WORD)
+            self.alphanumeric()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2025,8 +2026,9 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self):
-            return self.getToken(GnosisEPLParser.WORD, 0)
+        def alphanumeric(self):
+            return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,0)
+
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_attribute_name
@@ -2049,7 +2051,7 @@ class GnosisEPLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 327
-            self.match(GnosisEPLParser.WORD)
+            self.alphanumeric()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2462,12 +2464,13 @@ class GnosisEPLParser ( Parser ):
             self.match(GnosisEPLParser.WHITESPACE)
             self.state = 382
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [GnosisEPLParser.T__3, GnosisEPLParser.T__4, GnosisEPLParser.NUMBER]:
+            la_ = self._interp.adaptivePredict(self._input,42,self._ctx)
+            if la_ == 1:
                 self.state = 377
                 self.attribute_value()
                 pass
-            elif token in [GnosisEPLParser.WORD]:
+
+            elif la_ == 2:
                 self.state = 378
                 self.attribute_name()
                 self.state = 379
@@ -2475,8 +2478,7 @@ class GnosisEPLParser ( Parser ):
                 self.state = 380
                 self.attribute_name()
                 pass
-            else:
-                raise NoViableAltException(self)
+
 
         except RecognitionException as re:
             localctx.exception = re
