@@ -482,7 +482,6 @@ class TestGnosisEPLGrammar(unittest.TestCase):
             "WITHIN TUMBLING_COUNT_WINDOW(1) "
             "RETURN *"
         )
-        import ipdb; ipdb.set_trace()
         query_dict = self.parser.parse(query_text)
         excepted_str = 'MATCH (c:Car)--(p:Person)'
         self.assertIn('match', query_dict)
