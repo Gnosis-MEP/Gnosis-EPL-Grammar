@@ -143,8 +143,11 @@ attribute_value_num :  NUMBER+ ;
 
 logical_operator    : (AND | OR) ;
 
-where_clause : where_attribute (WHITESPACE* logical_operator WHITESPACE* where_attribute)* ;
-where_attribute : attribute_name DOT attribute_name WHITESPACE comparison_operator WHITESPACE (attribute_value | attribute_name DOT attribute_name) ;
+where_clause : (logical_operator)? where_logical_op_set (WHITESPACE* logical_operator WHITESPACE* where_logical_op_set)* ;
+where_logical_op_set : where_attribute WHITESPACE comparison_operator WHITESPACE (attribute_value | where_attribute) ;
+where_attribute : object_class DOT where_attribute_name ;
+where_attribute_name : (alphanumeric | (LBRACK NUMBER+ RBRACK) | DOT)+;
+
 
 publisher_list : publisher ((COMMA | (COMMA WHITESPACE)) publisher)* ;
 publisher : (alphanumeric | ASTERISK)+ ;

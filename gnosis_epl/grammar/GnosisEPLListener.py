@@ -260,12 +260,30 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#where_logical_op_set.
+    def enterWhere_logical_op_set(self, ctx:GnosisEPLParser.Where_logical_op_setContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#where_logical_op_set.
+    def exitWhere_logical_op_set(self, ctx:GnosisEPLParser.Where_logical_op_setContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#where_attribute.
     def enterWhere_attribute(self, ctx:GnosisEPLParser.Where_attributeContext):
         pass
 
     # Exit a parse tree produced by GnosisEPLParser#where_attribute.
     def exitWhere_attribute(self, ctx:GnosisEPLParser.Where_attributeContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#where_attribute_name.
+    def enterWhere_attribute_name(self, ctx:GnosisEPLParser.Where_attribute_nameContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#where_attribute_name.
+    def exitWhere_attribute_name(self, ctx:GnosisEPLParser.Where_attribute_nameContext):
         pass
 
 

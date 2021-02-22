@@ -576,3 +576,19 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         excepted_str = 'RETURN *'
         self.assertIn('ret', query_dict)
         self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_where_with_list_attributes(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (p:person), (p2:person) "
+            "WHERE p.bounding_box[2] < p2.bounding_box[0] "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN *"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'WHERE p.bounding_box[2] < p2.bounding_box[0]'
+        self.assertIn('where', query_dict)
+        self.assertEqual(query_dict['where'], excepted_str)
