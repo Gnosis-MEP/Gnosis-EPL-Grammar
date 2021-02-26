@@ -107,7 +107,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                (WHERE WHITESPACE where_clause separator)?
                FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
-               (WITH_QOS WHITESPACE metric_list separator)?
+               (WITH_QOS WHITESPACE qos_metric_list separator)?
                RETURN WHITESPACE node_list;
 
 query_name  : WORD ;
@@ -138,7 +138,8 @@ attributes : LCURLY WHITESPACE* attribute ((COMMA | (COMMA WHITESPACE*)) attribu
 attribute : attribute_name COLON attribute_value ;
 attribute_name : alphanumeric ;
 attribute_value : (attribute_value_str | attribute_value_num) ;
-attribute_value_str : ('\'' | '"') (alphanumeric | WHITESPACE)* ('\'' | '"') ;
+attribute_value_str : ('\'' | '"') (attribute_value_str_inner)* ('\'' | '"') ;
+attribute_value_str_inner : (alphanumeric | WHITESPACE) ;
 attribute_value_num :  NUMBER+ ;
 
 logical_operator    : (AND | OR) ;
@@ -157,10 +158,10 @@ window_type : WORD ;
 window_arg_list : window_arg ((COMMA | (COMMA WHITESPACE)) window_arg)* ;
 window_arg : alphanumeric ;
 
-metric_list : metric ((COMMA | (COMMA WHITESPACE)) metric)* ;
-metric : metric_name WHITESPACE comparison_operator WHITESPACE metric_value ;
-metric_name : WORD ;
-metric_value : alphanumeric ;
+qos_metric_list : qos_metric ((COMMA | (COMMA WHITESPACE)) qos_metric)* ;
+qos_metric : qos_metric_name WHITESPACE comparison_operator WHITESPACE qos_metric_value ;
+qos_metric_name : WORD ;
+qos_metric_value : attribute_value ;
 
 node_list : node ((COMMA | (COMMA WHITESPACE)) node)* ;
 node : (alphanumeric (DOT alphanumeric)? | ASTERISK)+;

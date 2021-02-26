@@ -60,6 +60,21 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterWhere_clause(self, ctx):
         self.query['where'] = f'WHERE {ctx.getText()}'
 
+    def enterQos_metric_list(self, ctx):
+        self.query['qos_policies'] = {}
+
+    def enterQos_metric(self, ctx):
+        name = ctx.qos_metric_name().getText()
+        attr_value_ctx = ctx.qos_metric_value().attribute_value()
+
+        num_val = attr_value_ctx.attribute_value_num()
+        if num_val:
+            val = float(num_val.getText())
+        else:
+            str_val_list = attr_value_ctx.attribute_value_str().attribute_value_str_inner()
+            val = ''.join([v.getText() for v in str_val_list])
+        self.query['qos_policies'][name] = val
+
     def enterNode_list(self, ctx):
         self.query['ret'] = f'RETURN {ctx.getText()}'
 

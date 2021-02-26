@@ -592,3 +592,62 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         excepted_str = 'WHERE p.bounding_box[2] < p2.bounding_box[0]'
         self.assertIn('where', query_dict)
         self.assertEqual(query_dict['where'], excepted_str)
+
+    def test_parsed_with_qos_statements_single_metric_num(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (p:person), (p2:person) "
+            "WHERE p.bounding_box[2] < p2.bounding_box[0] "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "WITH_QOS accuracy = 123 "
+            "RETURN *"
+        )
+        query_dict = self.parser.parse(query_text)
+        expected_dict = {
+            'accuracy': 123,
+        }
+        self.assertIn('qos_policies', query_dict)
+        self.assertDictEqual(query_dict['qos_policies'], expected_dict)
+
+    def test_parsed_with_qos_statements_single_metric_str(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (p:person), (p2:person) "
+            "WHERE p.bounding_box[2] < p2.bounding_box[0] "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "WITH_QOS accuracy = \"min mean max\" "
+            "RETURN *"
+        )
+        query_dict = self.parser.parse(query_text)
+        expected_dict = {
+            'accuracy': 'min mean max',
+        }
+        self.assertIn('qos_policies', query_dict)
+        self.assertDictEqual(query_dict['qos_policies'], expected_dict)
+
+    def test_parsed_with_qos_statements_multiple_metrics(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (p:person), (p2:person) "
+            "WHERE p.bounding_box[2] < p2.bounding_box[0] "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "WITH_QOS accuracy = \"min mean max\", energy = 123, latency = 'average' "
+            "RETURN *"
+        )
+        query_dict = self.parser.parse(query_text)
+        expected_dict = {
+            'accuracy': 'min mean max',
+            'energy': 123.0,
+            'latency': 'average'
+        }
+        self.assertIn('qos_policies', query_dict)
+        self.assertDictEqual(query_dict['qos_policies'], expected_dict)

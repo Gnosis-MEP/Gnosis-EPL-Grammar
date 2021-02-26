@@ -233,6 +233,15 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#attribute_value_str_inner.
+    def enterAttribute_value_str_inner(self, ctx:GnosisEPLParser.Attribute_value_str_innerContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#attribute_value_str_inner.
+    def exitAttribute_value_str_inner(self, ctx:GnosisEPLParser.Attribute_value_str_innerContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#attribute_value_num.
     def enterAttribute_value_num(self, ctx:GnosisEPLParser.Attribute_value_numContext):
         pass
@@ -341,39 +350,39 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#metric_list.
-    def enterMetric_list(self, ctx:GnosisEPLParser.Metric_listContext):
+    # Enter a parse tree produced by GnosisEPLParser#qos_metric_list.
+    def enterQos_metric_list(self, ctx:GnosisEPLParser.Qos_metric_listContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#metric_list.
-    def exitMetric_list(self, ctx:GnosisEPLParser.Metric_listContext):
-        pass
-
-
-    # Enter a parse tree produced by GnosisEPLParser#metric.
-    def enterMetric(self, ctx:GnosisEPLParser.MetricContext):
-        pass
-
-    # Exit a parse tree produced by GnosisEPLParser#metric.
-    def exitMetric(self, ctx:GnosisEPLParser.MetricContext):
+    # Exit a parse tree produced by GnosisEPLParser#qos_metric_list.
+    def exitQos_metric_list(self, ctx:GnosisEPLParser.Qos_metric_listContext):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#metric_name.
-    def enterMetric_name(self, ctx:GnosisEPLParser.Metric_nameContext):
+    # Enter a parse tree produced by GnosisEPLParser#qos_metric.
+    def enterQos_metric(self, ctx:GnosisEPLParser.Qos_metricContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#metric_name.
-    def exitMetric_name(self, ctx:GnosisEPLParser.Metric_nameContext):
+    # Exit a parse tree produced by GnosisEPLParser#qos_metric.
+    def exitQos_metric(self, ctx:GnosisEPLParser.Qos_metricContext):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#metric_value.
-    def enterMetric_value(self, ctx:GnosisEPLParser.Metric_valueContext):
+    # Enter a parse tree produced by GnosisEPLParser#qos_metric_name.
+    def enterQos_metric_name(self, ctx:GnosisEPLParser.Qos_metric_nameContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#metric_value.
-    def exitMetric_value(self, ctx:GnosisEPLParser.Metric_valueContext):
+    # Exit a parse tree produced by GnosisEPLParser#qos_metric_name.
+    def exitQos_metric_name(self, ctx:GnosisEPLParser.Qos_metric_nameContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#qos_metric_value.
+    def enterQos_metric_value(self, ctx:GnosisEPLParser.Qos_metric_valueContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#qos_metric_value.
+    def exitQos_metric_value(self, ctx:GnosisEPLParser.Qos_metric_valueContext):
         pass
 
 
