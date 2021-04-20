@@ -110,7 +110,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                (WITH_QOS WHITESPACE qos_metric_list separator)?
                RETURN WHITESPACE node_list;
 
-query_name  : WORD ;
+query_name  : alphanumeric ;
 
 output_type  : output ((COMMA | (COMMA WHITESPACE+)) output)* ;
 output : WORD ;

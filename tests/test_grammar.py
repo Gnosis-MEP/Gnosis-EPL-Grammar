@@ -23,6 +23,18 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         self.assertIn('name', query_dict)
         self.assertEqual(query_dict['name'], 'my_first_query')
 
+    def test_query_name_with_num_is_correctly_parsed(self):
+        query_text = """REGISTER QUERY my_first_query000
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
+            FROM test
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('name', query_dict)
+        self.assertEqual(query_dict['name'], 'my_first_query000')
+
     def test_query_name_exception_when_invalid(self):
         query_text = """REGISTER QUERY Invalid Query Name
             OUTPUT K_GRAPH_JSON

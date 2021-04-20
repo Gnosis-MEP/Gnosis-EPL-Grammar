@@ -96,7 +96,7 @@ def serializedATN():
         buf.write("\5\20\t\2\u0099\u009b\3\2\2\2\u009a\u0095\3\2\2\2\u009a")
         buf.write("\u009b\3\2\2\2\u009b\u009c\3\2\2\2\u009c\u009d\7/\2\2")
         buf.write("\u009d\u009e\7\63\2\2\u009e\u009f\5V,\2\u009f\t\3\2\2")
-        buf.write("\2\u00a0\u00a1\7\62\2\2\u00a1\13\3\2\2\2\u00a2\u00af\5")
+        buf.write("\2\u00a0\u00a1\5\2\2\2\u00a1\13\3\2\2\2\u00a2\u00af\5")
         buf.write("\16\b\2\u00a3\u00ab\7\13\2\2\u00a4\u00a6\7\13\2\2\u00a5")
         buf.write("\u00a7\7\63\2\2\u00a6\u00a5\3\2\2\2\u00a7\u00a8\3\2\2")
         buf.write("\2\u00a8\u00a6\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00ab")
@@ -827,8 +827,9 @@ class GnosisEPLParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WORD(self):
-            return self.getToken(GnosisEPLParser.WORD, 0)
+        def alphanumeric(self):
+            return self.getTypedRuleContext(GnosisEPLParser.AlphanumericContext,0)
+
 
         def getRuleIndex(self):
             return GnosisEPLParser.RULE_query_name
@@ -851,7 +852,7 @@ class GnosisEPLParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 158
-            self.match(GnosisEPLParser.WORD)
+            self.alphanumeric()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
