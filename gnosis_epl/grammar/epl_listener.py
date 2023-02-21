@@ -42,6 +42,9 @@ class ToDictionaryEPLListener(GnosisEPLListener):
     def enterQuery_name(self, ctx):
         self.query['name'] = ctx.getText()
 
+    def enterOutput_list(self, ctx):
+        self.query['output'] = [p.getText() for p in ctx.output()]
+
     def enterContent(self, ctx):
         self.query['content'] = [c.getText() for c in ctx.content_service()]
 

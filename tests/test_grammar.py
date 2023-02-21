@@ -47,6 +47,30 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         with self.assertRaises(GnosisEPLParserException):
             query_dict = self.parser.parse(query_text)
 
+    def test_output_with_single_output(self):
+        query_text = """REGISTER QUERY my_first_query000
+            OUTPUT K_GRAPH_JSON
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
+            FROM test
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('output', query_dict)
+        self.assertListEqual(query_dict['output'], ['K_GRAPH_JSON'])
+
+    def test_output_with_multiple_output(self):
+        query_text = """REGISTER QUERY my_first_query000
+            OUTPUT K_GRAPH_JSON, VIDEO_STREAM
+            CONTENT ObjectDetection, ColorDetection
+            MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
+            FROM test
+            WITHIN TUMBLING_COUNT_WINDOW(2)
+            RETURN *"""
+        query_dict = self.parser.parse(query_text)
+        self.assertIn('output', query_dict)
+        self.assertListEqual(query_dict['output'], ['K_GRAPH_JSON', 'VIDEO_STREAM'])
+
     def test_from_is_correctly_parsed_when_single_value(self):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON

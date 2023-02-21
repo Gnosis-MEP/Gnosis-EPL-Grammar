@@ -53,12 +53,12 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by GnosisEPLParser#output_type.
-    def enterOutput_type(self, ctx:GnosisEPLParser.Output_typeContext):
+    # Enter a parse tree produced by GnosisEPLParser#output_list.
+    def enterOutput_list(self, ctx:GnosisEPLParser.Output_listContext):
         pass
 
-    # Exit a parse tree produced by GnosisEPLParser#output_type.
-    def exitOutput_type(self, ctx:GnosisEPLParser.Output_typeContext):
+    # Exit a parse tree produced by GnosisEPLParser#output_list.
+    def exitOutput_list(self, ctx:GnosisEPLParser.Output_listContext):
         pass
 
 

@@ -100,7 +100,7 @@ comparison_operator : (EQUAL | DIFFERENT | GTH | GTHE | LTH | LTHE ) ;
 query : subcription + EOF ;
 
 subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
-               OUTPUT WHITESPACE output_type separator
+               OUTPUT WHITESPACE output_list separator
                (CONTENT WHITESPACE content separator)?
                MATCH WHITESPACE match_clause separator
                (OPTIONAL WHITESPACE MATCH WHITESPACE match_clause separator)?
@@ -112,8 +112,8 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
 
 query_name  : alphanumeric ;
 
-output_type  : output ((COMMA | (COMMA WHITESPACE+)) output)* ;
-output : WORD ;
+output_list  : output ((COMMA | (COMMA WHITESPACE)) output)* ;
+output : alphanumeric ;
 
 separator : (NEWLINE | WHITESPACE)+ ;
 
