@@ -11,7 +11,7 @@ pushd $HEROKU_PYPI_LOCAL_DIR
 echo "commiting changes in pypi repo"
 git add data/
 git commit -m 'new version of gnosis_epl'
-echo "pushing changes to heroku"
+echo "pushing changes to heroku pipy master"
 git push origin master
 echo "You have to upload the new dist 'gnosis_epl-${CUR_VERSION}.tar.gz' file into the pythonanywhere web app usign the browser"
 popd
