@@ -14,7 +14,7 @@ class TestGnosisEPLGrammar(unittest.TestCase):
     def test_query_name_is_correctly_parsed(self):
         query_text = """REGISTER QUERY my_first_query
             OUTPUT K_GRAPH_JSON
-            CONTENT ObjectDetection, ColorDetection
+            CONTENT ObjectDetection, ColorDetection, SpeachToText, TextLanguageModel
             MATCH (c1:Car {color:'blue'}) , (c2:Car {color:'white'})
             FROM test
             WITHIN TUMBLING_COUNT_WINDOW(2)
@@ -610,6 +610,21 @@ class TestGnosisEPLGrammar(unittest.TestCase):
         )
         query_dict = self.parser.parse(query_text)
         excepted_str = 'RETURN *'
+        self.assertIn('ret', query_dict)
+        self.assertEqual(query_dict['ret'], excepted_str)
+
+    def test_entire_ret_complex_aggr(self):
+        query_text = (
+            "REGISTER QUERY my_first_query "
+            "OUTPUT K_GRAPH_JSON "
+            "CONTENT ObjectDetection "
+            "MATCH (c:Car)--(p:Person) "
+            "FROM publisher1 "
+            "WITHIN TUMBLING_COUNT_WINDOW(1) "
+            "RETURN count(distinct p) as PersonCount, p as People"
+        )
+        query_dict = self.parser.parse(query_text)
+        excepted_str = 'RETURN count(distinct p) as PersonCount, p as People'
         self.assertIn('ret', query_dict)
         self.assertEqual(query_dict['ret'], excepted_str)
 

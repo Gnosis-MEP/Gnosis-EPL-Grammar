@@ -108,7 +108,7 @@ subcription  : REGISTER WHITESPACE QUERY WHITESPACE query_name separator
                FROM WHITESPACE publisher_list separator
                WITHIN WHITESPACE window separator
                (WITH_QOS WHITESPACE qos_metric_list separator)?
-               RETURN WHITESPACE node_list;
+               RETURN WHITESPACE return_clause;
 
 query_name  : alphanumeric ;
 
@@ -163,15 +163,8 @@ qos_metric : qos_metric_name WHITESPACE comparison_operator WHITESPACE qos_metri
 qos_metric_name : WORD ;
 qos_metric_value : attribute_value ;
 
+return_clause : node_list;
+
 node_list : node ((COMMA | (COMMA WHITESPACE)) node)* ;
-node : (alphanumeric (DOT alphanumeric)? | ASTERISK)+;
-
-
-
-
-
-
-
-
-
-
+node : (alphanumeric (DOT alphanumeric)? | ASTERISK | aggregator)+ ((alphanumeric | WHITESPACE)+)?;
+aggregator : alphanumeric LPAREN (node | WHITESPACE)+ RPAREN ;

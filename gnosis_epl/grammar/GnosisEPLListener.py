@@ -386,6 +386,15 @@ class GnosisEPLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GnosisEPLParser#return_clause.
+    def enterReturn_clause(self, ctx:GnosisEPLParser.Return_clauseContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#return_clause.
+    def exitReturn_clause(self, ctx:GnosisEPLParser.Return_clauseContext):
+        pass
+
+
     # Enter a parse tree produced by GnosisEPLParser#node_list.
     def enterNode_list(self, ctx:GnosisEPLParser.Node_listContext):
         pass
@@ -401,6 +410,15 @@ class GnosisEPLListener(ParseTreeListener):
 
     # Exit a parse tree produced by GnosisEPLParser#node.
     def exitNode(self, ctx:GnosisEPLParser.NodeContext):
+        pass
+
+
+    # Enter a parse tree produced by GnosisEPLParser#aggregator.
+    def enterAggregator(self, ctx:GnosisEPLParser.AggregatorContext):
+        pass
+
+    # Exit a parse tree produced by GnosisEPLParser#aggregator.
+    def exitAggregator(self, ctx:GnosisEPLParser.AggregatorContext):
         pass
 
 
