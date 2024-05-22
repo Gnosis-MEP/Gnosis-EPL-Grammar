@@ -15,7 +15,7 @@ test_requirements = [
 ]
 setup(
     name='gnosis_epl',
-    version='0.11.2',
+    version='0.11.3',
     description="Gnosis EPL python package",
     long_description=readme,
     author="Felipe Arruda Pontes",
